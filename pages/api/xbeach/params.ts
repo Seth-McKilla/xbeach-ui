@@ -39,5 +39,10 @@ async function readParams(req: NextApiRequest, res: NextApiResponse) {
     }
   }
 
-  res.status(200).json({ data: params });
+  const paramsArray = Object.keys(params).map((key) => ({
+    name: key,
+    ...params[key],
+  }));
+
+  res.status(200).json({ data: paramsArray });
 }

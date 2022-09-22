@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     (async () => {
       const response = await fetch('/api/xbeach/params');
-      const data = await response.json();
+      const { data } = await response.json();
       setParams(data);
     })();
   }, []);
