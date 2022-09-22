@@ -1,15 +1,12 @@
 import Image from 'next/future/image';
 
-import { Loader } from 'components';
-import { useReadXBeachParams } from 'hooks';
+import { LinkButton } from 'components';
 
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  const { data: xBeachParams, isLoading } = useReadXBeachParams();
-
   return (
-    <div className="container max-w-4xl mx-auto">
+    <div className="container max-w-4xl p-2 mx-auto">
       <div className="flex items-center justify-center pt-3 pb-3">
         <a
           href="https://oss.deltares.nl/web/xbeach/"
@@ -56,13 +53,9 @@ const Home: NextPage = () => {
           {'.'}
         </p>
       </div>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <pre className="p-4 bg-gray-100 rounded-md">
-          {JSON.stringify(xBeachParams, null, 2)}
-        </pre>
-      )}
+      <div className="flex flex-col items-center justify-center pb-4">
+        <LinkButton href="/create-params">{'Create XBeach Params'}</LinkButton>
+      </div>
     </div>
   );
 };

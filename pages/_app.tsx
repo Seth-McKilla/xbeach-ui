@@ -9,13 +9,14 @@ import {
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import '../styles/globals.css';
+import type { NextPage } from 'next';
 import type { AppProps as NextAppProps } from 'next/app';
 
 type AppProps<P = any> = NextAppProps & {
   pageProps: P;
 } & Omit<NextAppProps<P>, 'pageProps'>;
 
-export default function App({ Component, pageProps }: AppProps) {
+const App: NextPage = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
@@ -28,4 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </QueryClientProvider>
     </PlausibleProvider>
   );
-}
+};
+
+export default App;
