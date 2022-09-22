@@ -13,15 +13,31 @@ async function readParams(req: NextApiRequest, res: NextApiResponse) {
     'https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/tables/partable_all.tab',
   );
   const text = await response.text();
-  const lines = text.split('\n');
-  const headers = lines[0].split('\t');
-  const params = lines.slice(1).map((line) => {
-    const values = line.split('\t');
-    const param = {} as Record<string, string>;
-    headers.forEach((header, index) => {
-      param[header] = values[index];
-    });
-    return param;
-  });
-  res.status(200).json(params);
+
+  const params = {};
+  let currentParam: string;
+
+  for (let line of text.split('\n')) {
+    line = line.trim();
+
+    if (line.match(/^[a-zA-Z]/)) {
+      currentParam = line;
+      params[currentParam] = {};
+    } else if (line.match(/^:/)) {
+      let [, key, value] = line.split(':');
+      key = key.trim();
+      value = value.trim() || '-';
+      if (key.match(/(advanced|silent|required)/i)) {
+        key.split(',').forEach((k) => {
+          params[currentParam][k] = true;
+        });
+      } else {
+        params[currentParam][key] = value;
+      }
+    } else {
+      continue;
+    }
+  }
+
+  res.status(200).json({ data: params });
 }
