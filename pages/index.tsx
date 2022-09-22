@@ -53,7 +53,13 @@ const Home: NextPage = () => {
           {'.'}
         </p>
       </div>
-      <div className="flex flex-col items-center justify-center pb-4">
+      <div className="flex flex-col items-center justify-center pt-8 pb-4">
+        <h3 className="mb-4 text-3xl font-bold text-center">
+          <span role="img" aria-label="hammer and wrench" className="mr-1">
+            {'🛠️'}
+          </span>
+          {'Tools'}
+        </h3>
         <LinkButton href="/create-params">{'Create XBeach Params'}</LinkButton>
       </div>
     </div>
