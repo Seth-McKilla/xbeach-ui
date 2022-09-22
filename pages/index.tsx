@@ -1,18 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useReadXBeachParams } from 'hooks';
 
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  const [params, setParams] = useState([]);
-  console.log(params);
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch('/api/xbeach/params');
-      const { data } = await response.json();
-      setParams(data);
-    })();
-  }, []);
+  const { data: xBeachParams, isLoading } = useReadXBeachParams();
 
   return <h1 className="text-3xl font-bold underline">{'Hello world!'}</h1>;
 };
