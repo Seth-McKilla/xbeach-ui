@@ -1,4 +1,4 @@
-import { Loader, InputNumber } from 'components';
+import { Loader, InputNumber, InputText } from 'components';
 import { useReadXBeachParams } from 'hooks';
 
 import type { NextPage } from 'next';
@@ -10,15 +10,27 @@ const CreateParams: NextPage = () => {
     <Loader />
   ) : (
     <div className="container max-w-6xl p-2 mx-auto">
-      <div className="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-4">
-        {xBeachParams?.map((param: any, idx: number) => (
-          <InputNumber
-            key={`${idx}-${param.name}`}
-            name={param.name}
-            description={param.description}
-            defaultValue={+param.default}
-          />
-        ))}
+      <div className="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-4 sm:grid-cols-3">
+        {xBeachParams?.map((param: any, idx: number) => {
+          if (+param.default) {
+            return (
+              <InputNumber
+                key={`${idx}-${param.name}`}
+                name={param.name}
+                description={param.description}
+                defaultValue={+param.default}
+              />
+            );
+          } else {
+            return (
+              <InputText
+                key={`${idx}-${param.name}`}
+                name={param.name}
+                description={param.description}
+              />
+            );
+          }
+        })}
       </div>
     </div>
   );
