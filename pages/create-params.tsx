@@ -1,4 +1,4 @@
-import { Loader, InputNumber, InputSwitch, InputText } from 'components';
+import { Loader, InputNumber, InputCheckbox, InputText } from 'components';
 import { useReadXBeachParams } from 'hooks';
 
 import type { NextPage } from 'next';
@@ -15,7 +15,7 @@ export type ParamCollection = {
 const renderParams = (param: Param, idx: number) => {
   if (param.range === '0 - 1') {
     return (
-      <InputSwitch
+      <InputCheckbox
         key={`${idx}-${param.name}`}
         name={param.name}
         description={param.description}
