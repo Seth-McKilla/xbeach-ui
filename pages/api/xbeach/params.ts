@@ -3,12 +3,12 @@ import { apiHandler } from 'lib/api';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = apiHandler({
-  GET: readParams,
+  GET: readXBeachParams,
 });
 
 export default handler;
 
-async function readParams(req: NextApiRequest, res: NextApiResponse) {
+async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
   const response = await fetch(
     'https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst',
   );
