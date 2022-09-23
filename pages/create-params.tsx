@@ -50,7 +50,6 @@ const CreateParams: NextPage = () => {
   ) : (
     <div className="container max-w-6xl p-2 mx-auto">
       {xBeachParams?.map((paramCollection: ParamCollection, idx: number) => {
-        console.log(paramCollection);
         return (
           <div
             key={`${idx}-${paramCollection.title}`}

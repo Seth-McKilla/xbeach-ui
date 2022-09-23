@@ -8,6 +8,8 @@ const handler = apiHandler({
 
 export default handler;
 
+const ignoredParams = ['spaceparams'];
+
 async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
   const response = await fetch(
     'https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst',
@@ -28,6 +30,9 @@ async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
   await Promise.all(
     tables.map(async (table) => {
       const title = table.split('partable_')[1].replace('.tab', '');
+
+      if (ignoredParams.includes(title)) return;
+
       params[title] = {};
 
       const response = await fetch(
