@@ -1,13 +1,12 @@
 import Image from "next/future/image";
 
-import { Header, LinkButton } from "components";
+import { LinkButton } from "components";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="container max-w-4xl p-2 mx-auto">
-      <Header />
+    <div className="container flex flex-col justify-center h-screen max-w-4xl mx-auto place-items-center">
       <div className="flex items-center justify-center pt-3 pb-3">
         <a
           href="https://oss.deltares.nl/web/xbeach/"
