@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['oss.deltares.nl'],
+    domains: ["oss.deltares.nl"],
+  },
+  experimental: {
+    appDir: true,
   },
 };
 
