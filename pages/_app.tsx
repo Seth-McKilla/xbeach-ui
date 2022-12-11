@@ -12,7 +12,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "../styles/globals.css";
 import type { NextPage } from "next";
 import type { AppProps as NextAppProps } from "next/app";
-import { Header } from "components";
 
 type AppProps<P = any> = NextAppProps & {
   pageProps: P;
@@ -29,7 +28,6 @@ const App: NextPage = ({
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <SessionProvider session={session}>
-            <Header />
             <Component {...pageProps} />
           </SessionProvider>
         </Hydrate>
