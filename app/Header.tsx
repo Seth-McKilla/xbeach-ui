@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
+import Button from "./components/Button";
 import LinkButton from "./components/LinkButton";
 
 export default function Header() {
@@ -22,12 +23,7 @@ export default function Header() {
         {session ? (
           <div className="flex items-center">
             <p className="mr-2">{session.user.email}</p>
-            <button
-              className="px-4 py-2 font-semibold text-white bg-blue-800 rounded-md hover:bg-blue-900"
-              onClick={() => signOut()}
-            >
-              Sign Out
-            </button>
+            <Button onClick={() => signOut()}>Sign Out</Button>
           </div>
         ) : (
           <LinkButton href="/signin">Sign In</LinkButton>

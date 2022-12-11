@@ -1,6 +1,6 @@
-export type Props = {
-  children: React.ReactNode | string;
-};
+import type { ButtonHTMLAttributes } from "react";
+
+export type Props = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({ children }: Props) {
   return (
