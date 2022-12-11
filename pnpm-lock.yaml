@@ -3,8 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@next-auth/prisma-adapter': ^1.0.5
   '@prisma/client': ^4.7.1
-  '@tanstack/react-query': ^4.3.9
-  '@tanstack/react-query-devtools': ^4.3.9
   '@types/node': 18.11.13
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
@@ -14,7 +12,6 @@ specifiers:
   eslint-config-next: 13.0.6
   next: 13.0.6
   next-auth: ^4.18.4
-  next-plausible: ^3.6.3
   nodemailer: ^6.8.0
   postcss: ^8.4.16
   prettier: ^2.7.1
@@ -27,11 +24,8 @@ specifiers:
 dependencies:
   '@next-auth/prisma-adapter': 1.0.5_4eojhct6t46nl4awizrjr4dkya
   '@prisma/client': 4.7.1_prisma@4.7.1
-  '@tanstack/react-query': 4.3.9_biqbaboplfbrettd7655fr4n2y
-  '@tanstack/react-query-devtools': 4.3.9_epsj7huqxjc5l4xgmicnqhbxle
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.18.4_ph7ncimqkfipxkhrqa54rmxzeq
-  next-plausible: 3.6.3_6jx7hpii6hgsrmhxgqrmo3277u
   nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -307,49 +301,6 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.4.0
-    dev: false
-
-  /@tanstack/match-sorter-utils/8.1.1:
-    resolution: {integrity: sha512-IdmEekEYxQsoLOR0XQyw3jD1GujBpRRYaGJYQUw1eOT1eUugWxdc7jomh1VQ1EKHcdwDLpLaCz/8y4KraU4T9A==}
-    engines: {node: '>=12'}
-    dependencies:
-      remove-accents: 0.4.2
-    dev: false
-
-  /@tanstack/query-core/4.3.8:
-    resolution: {integrity: sha512-AEUWtCNBIImFZ9tMt/P8V86kIhMHpfoJqAI1auGOLR8Wzeq7Ymiue789PJG0rKYcyViUicBZeHjggMqyEQVMfQ==}
-    dev: false
-
-  /@tanstack/react-query-devtools/4.3.9_epsj7huqxjc5l4xgmicnqhbxle:
-    resolution: {integrity: sha512-N+nMBwrxAYsC5oEmexCuo4OZqBpR97pfy8r8tuvekFNYlA0pYlCnsxiqkZoZzF6ewk7w8KPkkDhClx0kSlW3qw==}
-    peerDependencies:
-      '@tanstack/react-query': 4.3.9
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@tanstack/match-sorter-utils': 8.1.1
-      '@tanstack/react-query': 4.3.9_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      use-sync-external-store: 1.2.0_react@18.2.0
-    dev: false
-
-  /@tanstack/react-query/4.3.9_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-odfDW6WiSntCsCh+HFeJtUys3UnVOjfJMhykAtGtYvcklMyyDmCv9BVBt5KlSpbk/qW3kURPFCDapO+BFUlCwg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      '@tanstack/query-core': 4.3.8
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /@types/json5/0.0.29:
@@ -1759,18 +1710,6 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-plausible/3.6.3_6jx7hpii6hgsrmhxgqrmo3277u:
-    resolution: {integrity: sha512-KlpB0k/PPMq0udKOLgTcp6RAqGLiIi7956tXRD5w/gzzgVdp2i3xvnafG60Exjiz98go1Jj98n/PxD3WitKH6Q==}
-    peerDependencies:
-      next: ^11.1.0 || ^12.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      next: 13.0.6_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
   /next/13.0.6_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-COvigvms2LRt1rrzfBQcMQ2GZd86Mvk1z+LOLY5pniFtL4VrTmhZ9salrbKfSiXbhsD01TrDdD68ec3ABDyscA==}
     engines: {node: '>=14.6.0'}
@@ -2193,10 +2132,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /remove-accents/0.4.2:
-    resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
-    dev: false
-
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -2539,14 +2474,6 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: true
-
-  /use-sync-external-store/1.2.0_react@18.2.0:
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
