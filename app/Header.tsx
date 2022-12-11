@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-
 import { signIn } from "next-auth/react";
+
+import LinkButton from "./components/LinkButton";
 
 export default function Header() {
   return (
@@ -16,12 +17,7 @@ export default function Header() {
       </div>
 
       <div className="flex ems-center">
-        <button
-          className="px-4 py-2 font-semibold text-white bg-blue-800 rounded-md hover:bg-blue-800"
-          onClick={() => signIn()}
-        >
-          Sign in
-        </button>
+        <LinkButton href="/signin">Sign In</LinkButton>
       </div>
     </header>
   );
