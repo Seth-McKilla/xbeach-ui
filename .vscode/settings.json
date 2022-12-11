@@ -10,5 +10,7 @@
     "tailwindcss",
     "tanstack",
     "xbeach"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
