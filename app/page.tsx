@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { LinkButton } from "components";
+import LinkButton from "./components/LinkButton";
 
 import type { NextPage } from "next";
 

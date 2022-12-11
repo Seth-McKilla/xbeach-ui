@@ -1,4 +1,7 @@
-import { Loader, InputNumber, InputCheckbox, InputText } from "components";
+import InputCheckbox from "../components/InputCheckbox";
+import InputNumber from "../components/InputNumber";
+import InputText from "../components/InputText";
+import Loader from "../components/Loader";
 import { useReadXBeachParams } from "hooks";
 
 import type { NextPage } from "next";
