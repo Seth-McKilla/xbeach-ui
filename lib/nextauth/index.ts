@@ -13,6 +13,10 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/signin",
+    signOut: "/signout",
+  },
   session: {
     strategy: "jwt",
   },

@@ -2,9 +2,7 @@ import Image from "next/image";
 
 import LinkButton from "./components/LinkButton";
 
-import type { NextPage } from "next";
-
-const Home: NextPage = () => {
+export default function HomePage() {
   return (
     <div className="container flex flex-col justify-center h-screen mx-auto -mt-20 place-items-center">
       <div className="flex items-center justify-center pt-3 pb-3">
@@ -49,6 +47,4 @@ const Home: NextPage = () => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}
