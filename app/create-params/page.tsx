@@ -2,7 +2,6 @@ import InputCheckbox from "../components/InputCheckbox";
 import InputNumber from "../components/InputNumber";
 import InputText from "../components/InputText";
 import Loader from "../components/Loader";
-import { useReadXBeachParams } from "hooks";
 
 import type { NextPage } from "next";
 
@@ -46,40 +45,40 @@ const renderParams = (param: Param, idx: number) => {
 };
 
 const CreateParams: NextPage = () => {
-  const { data: xBeachParams, isLoading } = useReadXBeachParams();
+  return <div>placeholder</div>;
 
-  return isLoading ? (
-    <Loader />
-  ) : (
-    <div className="container max-w-6xl p-2 mx-auto">
-      {xBeachParams?.map((paramCollection: ParamCollection, idx: number) => {
-        return (
-          <div
-            key={`${idx}-${paramCollection.title}`}
-            className="mb-6 border-2 border-blue-800 rounded-lg"
-          >
-            <h2 className="px-4 pt-2 text-2xl font-bold">
-              {paramCollection.title
-                .split("_")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
-            </h2>
-            {paramCollection.params.length > 0 ? (
-              <div className="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-4 sm:grid-cols-3">
-                {paramCollection.params.map((param: Param, idx: number) =>
-                  renderParams(param, idx)
-                )}
-              </div>
-            ) : (
-              <p className="p-4 text-md">
-                {"This functionality is a beta feature and not fully tested."}
-              </p>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
+  // return isLoading ? (
+  //   <Loader />
+  // ) : (
+  //   <div className="container max-w-6xl p-2 mx-auto">
+  //     {xBeachParams?.map((paramCollection: ParamCollection, idx: number) => {
+  //       return (
+  //         <div
+  //           key={`${idx}-${paramCollection.title}`}
+  //           className="mb-6 border-2 border-blue-800 rounded-lg"
+  //         >
+  //           <h2 className="px-4 pt-2 text-2xl font-bold">
+  //             {paramCollection.title
+  //               .split("_")
+  //               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+  //               .join(" ")}
+  //           </h2>
+  //           {paramCollection.params.length > 0 ? (
+  //             <div className="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-4 sm:grid-cols-3">
+  //               {paramCollection.params.map((param: Param, idx: number) =>
+  //                 renderParams(param, idx)
+  //               )}
+  //             </div>
+  //           ) : (
+  //             <p className="p-4 text-md">
+  //               {"This functionality is a beta feature and not fully tested."}
+  //             </p>
+  //           )}
+  //         </div>
+  //       );
+  //     })}
+  //   </div>
+  // );
 };
 
 export default CreateParams;
