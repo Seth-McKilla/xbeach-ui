@@ -1,26 +1,32 @@
-import { apiHandler } from 'lib/api';
+import { apiHandler } from "lib/api";
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const handler = apiHandler({
-  GET: readXBeachParams,
+  GET: getXBeachParams,
 });
 
 export default handler;
 
-const ignoredParams = ['spaceparams'];
+const ignoredParams = ["spaceparams"];
 
-async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
+async function getXBeachParams(req: NextApiRequest, res: NextApiResponse) {
+  const paramsArray = await readXBeachParams();
+
+  res.status(200).json({ data: paramsArray });
+}
+
+export async function readXBeachParams() {
   const response = await fetch(
-    'https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst',
+    "https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst"
   );
   const text = await response.text();
 
   const tables: Array<string> = [];
 
-  for (let line of text.split('\n')) {
-    if (line.startsWith('.. include::')) {
-      tables.push(line.split('/')[1].replace('\r', ''));
+  for (let line of text.split("\n")) {
+    if (line.startsWith(".. include::")) {
+      tables.push(line.split("/")[1].replace("\r", ""));
     }
   }
 
@@ -29,29 +35,29 @@ async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
 
   await Promise.all(
     tables.map(async (table) => {
-      const title = table.split('partable_')[1].replace('.tab', '');
+      const title = table.split("partable_")[1].replace(".tab", "");
 
       if (ignoredParams.includes(title)) return;
 
       params[title] = {};
 
       const response = await fetch(
-        `https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/tables/${table}`,
+        `https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/tables/${table}`
       );
       const text = await response.text();
 
-      for (let line of text.split('\n')) {
+      for (let line of text.split("\n")) {
         line = line.trim();
 
         if (line.match(/^[a-zA-Z]/)) {
           currentParam = line;
           params[title][currentParam] = {};
         } else if (line.match(/^:/)) {
-          let [, key, value] = line.split(':');
+          let [, key, value] = line.split(":");
           key = key.trim();
-          value = value.trim() || '-';
+          value = value.trim() || "-";
           if (key.match(/(advanced|silent|required)/i)) {
-            key.split(',').forEach((k) => {
+            key.split(",").forEach((k) => {
               params[title][currentParam][k] = true;
             });
           } else {
@@ -61,10 +67,10 @@ async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
           continue;
         }
       }
-    }),
+    })
   );
 
-  const paramsArray = Object.keys(params).map((key) => {
+  return Object.keys(params).map((key) => {
     return {
       title: key,
       params: Object.keys(params[key]).map((param) => {
@@ -75,6 +81,4 @@ async function readXBeachParams(req: NextApiRequest, res: NextApiResponse) {
       }),
     };
   });
-
-  res.status(200).json({ data: paramsArray });
 }
