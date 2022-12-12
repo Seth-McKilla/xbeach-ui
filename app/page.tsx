@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import LinkButton from "./components/LinkButton";
+import CallToAction from "./CallToAction";
 
 export default function HomePage() {
   return (
@@ -41,6 +41,7 @@ export default function HomePage() {
           </a>
         </p>
       </div>
+      <CallToAction />
     </div>
   );
 }
