@@ -6,10 +6,14 @@ type Props = ButtonProps & {
   href: string;
 };
 
-export default function LinkButton({ children, href }: Props): JSX.Element {
+export default function LinkButton({
+  children,
+  href,
+  ...rest
+}: Props): JSX.Element {
   return (
     <Link href={href}>
-      <Button>{children}</Button>
+      <Button {...rest}>{children}</Button>
     </Link>
   );
 }

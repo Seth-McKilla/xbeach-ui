@@ -9,7 +9,7 @@ export default function SignInPage() {
         </h2>
         <p className="mt-2 text-sm text-center text-gray-600">
           {
-            "Don't have an account? No problem, we'll create one for you and email you a link to access your account."
+            "Don't have an account? No problem, we'll create one for you and email you a link to access it."
           }
         </p>
         <SignInForm />

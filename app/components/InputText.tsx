@@ -1,7 +1,7 @@
-interface Props {
+type Props = {
   name: string;
   description: string;
-}
+};
 
 export default function InputText({ name, description }: Props): JSX.Element {
   return (

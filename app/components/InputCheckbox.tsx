@@ -1,8 +1,8 @@
-interface Props {
+type Props = {
   name: string;
   description: string;
   defaultValue: boolean;
-}
+};
 
 export default function InputSwitch({
   name,
