@@ -1,7 +1,9 @@
+import ListProjects from "./ListProjects";
+
 export default function DashboardPage() {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="mt-4">
+      <ListProjects />
     </div>
   );
 }
