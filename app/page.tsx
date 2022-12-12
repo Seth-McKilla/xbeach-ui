@@ -4,7 +4,7 @@ import CallToAction from "./CallToAction";
 
 export default function HomePage() {
   return (
-    <div className="container flex flex-col justify-center h-screen mx-auto -mt-20 place-items-center">
+    <div className="container flex flex-col justify-center h-screen mx-auto -mt-20 space-y-6 place-items-center">
       <div className="flex items-center justify-center pt-3 pb-3">
         <a
           href="https://oss.deltares.nl/web/xbeach/"
@@ -27,9 +27,9 @@ export default function HomePage() {
         <h3 className="mb-4 text-3xl font-bold text-center">
           {"Quality of life tools for XBeach"}
         </h3>
-        <p className="text-md">
+        <p className="text-center text-md">
           {
-            "This project is not affiliated with Deltares or XBeach in any way. It is a community project to make XBeach more accessible to the general public. If you would like to contribute, feel free to check out the repository on "
+            "This project is not affiliated with Deltares or XBeach in any way. It is a community project to make XBeach more accessible to the general public. If you would like to contribute, feel free to visit the repository on "
           }
           <a
             href="https://github.com/Seth-McKilla/xbeach-ui"
