@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@headlessui/react': 1.7.5
   '@next-auth/mongodb-adapter': 1.1.1
   '@next/font': 13.0.6
   '@tailwindcss/forms': ^0.5.3
@@ -14,16 +15,17 @@ specifiers:
   mongodb: 4.12.1
   next: 13.0.6
   next-auth: 4.18.5
-  nodemailer: ^6.8.0
+  nodemailer: 6.8.0
   postcss: ^8.4.16
   prettier: ^2.7.1
   react: 18.2.0
   react-dom: 18.2.0
-  react-hook-form: ^7.40.0
+  react-hook-form: 7.40.0
   tailwindcss: ^3.1.8
   typescript: 4.9.4
 
 dependencies:
+  '@headlessui/react': 1.7.5_biqbaboplfbrettd7655fr4n2y
   '@next-auth/mongodb-adapter': 1.1.1_vwat2dbfpguc44atdlgpigs6xi
   '@next/font': 13.0.6
   mongodb: 4.12.1
@@ -882,6 +884,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@headlessui/react/1.7.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-UZSxOfA0CYKO7QDT5OGlFvesvlR1SKkawwSjwQJwt7XQItpzRKdE3ZUQxHcg4LEz3C0Wler2s9psdb872ynwrQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@humanwhocodes/config-array/0.11.7:
     resolution: {integrity: sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw==}

@@ -8,7 +8,7 @@ import LinkButton from "./components/LinkButton";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 h-[80px] flex items-center justify-between px-6 py-4 bg-white border-b-4 border-blue-800">
+    <header className="sticky top-0 z-10 h-[80px] flex items-center justify-between px-6 py-4 bg-white border-b-4 border-blue-800">
       <div className="flex items-center">
         <Link href="/">
           <p className="text-2xl font-bold text-blue-800 cursor-pointer">
