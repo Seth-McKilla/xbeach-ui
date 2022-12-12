@@ -7,12 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:fix": "prettier './**/*.{tsx,ts}' --write",
-    "db:push": "npx prisma db push",
-    "db:pull": "npx prisma db pull",
-    "db:dev": "concurrently 'pnpm db:connect' 'pnpm db:studio'",
-    "db:connect": "pscale connect main development --port 4000",
-    "db:studio": "npx prisma studio"
+    "prettier:fix": "prettier './**/*.{tsx,ts}' --write"
   },
   "dependencies": {
     "@next/font": "13.0.6",
