@@ -34,9 +34,13 @@ export async function createProject(
   req: NextApiRequestAuthenticated,
   res: NextApiResponse
 ) {
-  const { name, description } = req.body;
+  const projectsCollection = await fetchCollection(clientPromise, "projects");
 
-  const params = await readParams();
+  const project = await projectsCollection.insertOne({
+    userId: req.user._id,
+    name: req.body.name,
+    models: [],
+  });
 
-  res.status(200).json({ data: params });
+  res.status(200).json({ data: project });
 }
