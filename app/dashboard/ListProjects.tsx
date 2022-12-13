@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 
 import Button from "../components/Button";
 import Input from "../components/Input";
@@ -13,9 +12,8 @@ import Modal from "../components/Modal";
 import { fetcher } from "lib/api/utils";
 
 export default function ListProjects() {
-  const { data: session } = useSession();
+  const { mutate } = useSWRConfig();
   const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
-  console.log(projects);
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
@@ -27,12 +25,18 @@ export default function ListProjects() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      projectName: "",
+      name: "",
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = ({ name }) => {
+    return fetcher("/api/xbeach/projects", {
+      method: "POST",
+      body: JSON.stringify({ name }),
+    }).then((data) => {
+      mutate("/api/xbeach/projects");
+      setDisplayNewProjectModal(false);
+    });
   };
 
   useEffect(() => {
@@ -52,13 +56,13 @@ export default function ListProjects() {
         setOpen={setDisplayNewProjectModal}
       >
         <form onSubmit={handleSubmit(onSubmit)}>
-          <InputLabel htmlFor="projectName">Project Name</InputLabel>
+          <InputLabel htmlFor="name">Project Name</InputLabel>
           <Input
-            {...register("projectName", {
+            {...register("name", {
               required: "Project Name is required",
             })}
           />
-          <InputError error={errors?.projectName?.message} />
+          <InputError error={errors?.name?.message} />
 
           <div className="flex flex-row-reverse mt-4 bg-gray-50">
             <div>
@@ -80,6 +84,14 @@ export default function ListProjects() {
       <div className="mt-4">
         <h1 className="text-2xl font-bold text-blue-800">My Projects</h1>
         <div className="mt-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {projects?.map(({ _id, name }) => (
+              <h2 key={_id} className="text-xl font-bold text-gray-800">
+                {name}
+              </h2>
+            ))}
+          </div>
+
           <Button onClick={() => setDisplayNewProjectModal(true)}>
             <div className="flex items-center">
               <svg
