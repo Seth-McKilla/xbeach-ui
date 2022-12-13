@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { useSession } from "next-auth/react";
+import { useForm } from "react-hook-form";
 
 import Button from "../components/Button";
 import InputText from "../components/InputText";
@@ -11,7 +12,17 @@ import Modal from "../components/Modal";
 export default function ListProjects() {
   const { data: session } = useSession();
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <>
@@ -21,9 +32,34 @@ export default function ListProjects() {
         open={displayNewProjectModal}
         setOpen={setDisplayNewProjectModal}
       >
-        <div className="flex justify-start w-full">
-          <InputText name="Project Name" />
-        </div>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col justify-start w-full"
+        >
+          <InputText
+            {...register("projectName", { required: true })}
+            name="projectName"
+            label="Project Name"
+          />
+          {errors.projectName && (
+            <span className="flex justify-start mt-1 text-xs text-red-500">
+              This field is required
+            </span>
+          )}
+          <div className="flex flex-row-reverse mt-4 bg-gray-50">
+            <div>
+              <Button onClick={onSubmit}>Create</Button>
+            </div>
+            <div className="mx-2">
+              <Button
+                variant="secondary"
+                onClick={() => setDisplayNewProjectModal(false)}
+              >
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </form>
       </Modal>
 
       <div className="mt-4">

@@ -1,15 +1,12 @@
 import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import Button from "./Button";
-
 type Props = {
   title: string;
   description: string;
   children: React.ReactNode;
   open: boolean;
   setOpen: (open: boolean) => void;
-  onSubmit?: () => void;
 };
 
 export default function Modal({
@@ -18,19 +15,11 @@ export default function Modal({
   children,
   open,
   setOpen,
-  onSubmit,
 }: Props) {
-  const cancelButtonRef = useRef(null);
-
   return (
     <div className="fixed inset-0 z-50 hidden w-full h-full overflow-y-auto bg-opacity-50">
       <Transition.Root show={open} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-10"
-          initialFocus={cancelButtonRef}
-          onClose={setOpen}
-        >
+        <Dialog as="div" className="relative z-10" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -67,19 +56,6 @@ export default function Modal({
                         <p className="text-sm text-gray-600">{description}</p>
                       </div>
                       <div className="mt-2">{children}</div>
-                    </div>
-                  </div>
-                  <div className="flex flex-row-reverse items-center px-4 py-3 bg-gray-50">
-                    <div className="p-2">
-                      <Button onClick={onSubmit}>Create</Button>
-                    </div>
-                    <div className="p-2">
-                      <Button
-                        variant="secondary"
-                        onClick={() => setOpen(false)}
-                      >
-                        Cancel
-                      </Button>
                     </div>
                   </div>
                 </Dialog.Panel>
