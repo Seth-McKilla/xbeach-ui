@@ -26,8 +26,6 @@ export default function ListProjects() {
     },
   });
 
-  console.log(errors);
-
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
   const onSubmit = (data) => {
@@ -50,9 +48,10 @@ export default function ListProjects() {
             })}
           />
           <InputError error={errors?.projectName?.message} />
+
           <div className="flex flex-row-reverse mt-4 bg-gray-50">
             <div>
-              <Button onClick={onSubmit}>Create</Button>
+              <Button type="submit">Create</Button>
             </div>
             <div className="mx-2">
               <Button
