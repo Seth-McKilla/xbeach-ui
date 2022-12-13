@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import InputError from "../components/InputError";
 import InputLabel from "../components/InputLabel";
+import LinkCard from "../components/LinkCard";
 import Modal from "../components/Modal";
 import { fetcher } from "lib/api/utils";
 
@@ -85,11 +86,14 @@ export default function ListProjects() {
       <div className="mt-4">
         <h1 className="text-2xl font-bold text-blue-800">My Projects</h1>
         <div className="mt-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {projects?.map(({ _id, name }) => (
-              <h2 key={_id} className="text-xl font-bold text-gray-800">
-                {name}
-              </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {projects?.map(({ _id, name, models }) => (
+              <LinkCard
+                key={_id}
+                href={`dashboard/projects/${_id}`}
+                title={name}
+                description={`${models.length} models`}
+              />
             ))}
           </div>
 
