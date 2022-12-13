@@ -11,6 +11,7 @@ const handler = apiHandler({
   GET: getProjects,
   POST: postProject,
   PATCH: patchProject,
+  DELETE: deleteProject,
 });
 
 export default handler;
@@ -56,14 +57,13 @@ export async function patchProject(
   });
 
   if (project.userId !== req.user._id) {
-    res.status(401).json({
+    return res.status(401).json({
       data: null,
       error: {
         code: "unauthorized",
         message: "You are not authenticated.",
       },
     });
-    return;
   }
 
   const updatedProject = await projectsCollection.updateOne(
@@ -78,4 +78,42 @@ export async function patchProject(
   );
 
   res.status(200).json({ data: updatedProject });
+}
+
+export async function deleteProject(
+  req: NextApiRequestAuthenticated,
+  res: NextApiResponse
+) {
+  const projectsCollection = await fetchCollection(clientPromise, "projects");
+
+  const project = await projectsCollection.findOne({
+    _id: req.body._id,
+  });
+
+  if (project.userId !== req.user._id) {
+    return res.status(401).json({
+      data: null,
+      error: {
+        code: "unauthorized",
+        message: "You are not authenticated.",
+      },
+    });
+  }
+
+  if (project.models.length > 0) {
+    return res.status(400).json({
+      data: null,
+      error: {
+        code: "bad-request",
+        message:
+          "You cannot delete a project with models. Please delete the models before trying again.",
+      },
+    });
+  }
+
+  const deletedProject = await projectsCollection.deleteOne({
+    _id: req.body._id,
+  });
+
+  res.status(200).json({ data: deletedProject });
 }
