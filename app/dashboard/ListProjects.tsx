@@ -83,10 +83,10 @@ export default function ListProjects() {
         </form>
       </Modal>
 
-      <div className="mt-4">
+      <div className="mt-8">
         <h1 className="text-2xl font-bold text-blue-800">My Projects</h1>
         <div className="mt-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-4 mb-4 sm:grid-cols-3 lg:grid-cols-5">
             {projects?.map(({ _id, name, models }) => (
               <LinkCard
                 key={_id}
