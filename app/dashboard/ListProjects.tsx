@@ -14,8 +14,8 @@ import { fetcher } from "lib/api";
 
 export default function ListProjects() {
   const { data: session } = useSession();
-  // const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
-  // console.log(projects);
+  const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
+  console.log(projects);
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
