@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes, type Ref } from "react";
 
-function InputText(
+function Input(
   props: InputHTMLAttributes<HTMLInputElement>,
   ref: Ref<HTMLInputElement>
 ) {
@@ -13,4 +13,4 @@ function InputText(
   );
 }
 
-export default forwardRef(InputText);
+export default forwardRef(Input);

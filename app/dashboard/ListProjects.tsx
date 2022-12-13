@@ -6,7 +6,9 @@ import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 
 import Button from "../components/Button";
-import InputText from "../components/InputText";
+import Input from "../components/Input";
+import InputError from "../components/InputError";
+import InputLabel from "../components/InputLabel";
 import Modal from "../components/Modal";
 
 export default function ListProjects() {
@@ -19,9 +21,12 @@ export default function ListProjects() {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
+    defaultValues: {
+      projectName: "",
+    },
   });
 
-  console.log(watch());
+  console.log(errors);
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
@@ -37,16 +42,14 @@ export default function ListProjects() {
         open={displayNewProjectModal}
         setOpen={setDisplayNewProjectModal}
       >
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col justify-start w-full"
-        >
-          <InputText {...register("projectName", { required: true })} />
-          {errors.projectName && (
-            <span className="flex justify-start mt-1 text-xs text-red-500">
-              This field is required
-            </span>
-          )}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <InputLabel htmlFor="projectName">Project Name</InputLabel>
+          <Input
+            {...register("projectName", {
+              required: "Project Name is required",
+            })}
+          />
+          <InputError error={errors?.projectName?.message} />
           <div className="flex flex-row-reverse mt-4 bg-gray-50">
             <div>
               <Button onClick={onSubmit}>Create</Button>

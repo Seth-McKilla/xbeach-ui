@@ -1,6 +1,6 @@
 import InputCheckbox from "../components/InputCheckbox";
 import InputNumber from "../components/InputNumber";
-import InputText from "../components/InputText";
+import Input from "../components/Input";
 
 export type Param = {
   [key: string]: any;
@@ -59,12 +59,6 @@ function renderParams(param: Param, idx: number) {
       />
     );
   } else {
-    return (
-      <InputText
-        key={`${idx}-${param.name}`}
-        name={param.name}
-        description={param.description}
-      />
-    );
+    return <Input key={`${idx}-${param.name}`} name={param.name} />;
   }
 }
