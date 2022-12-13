@@ -11,7 +11,6 @@ import { authOptions } from "../nextauth";
 
 export type Method = "GET" | "POST" | "PATCH" | "DELETE";
 
-// API middleware converts all string Ids to ObjectIds
 export type NextApiRequestAuthenticated = NextApiRequest & {
   user: {
     _id: ObjectId;

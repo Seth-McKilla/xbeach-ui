@@ -1,22 +1,25 @@
-import { apiHandler } from "lib/api";
+import { apiHandler, type NextApiRequestAuthenticated } from "lib/api";
 
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
 
 const handler = apiHandler({
-  GET: getXBeachParams,
+  GET: getParams,
 });
 
 export default handler;
 
 const ignoredParams = ["spaceparams"];
 
-async function getXBeachParams(req: NextApiRequest, res: NextApiResponse) {
-  const paramsArray = await readXBeachParams();
+async function getParams(
+  req: NextApiRequestAuthenticated,
+  res: NextApiResponse
+) {
+  const paramsArray = await readParams();
 
   res.status(200).json({ data: paramsArray });
 }
 
-export async function readXBeachParams() {
+export async function readParams() {
   const response = await fetch(
     "https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst"
   );
