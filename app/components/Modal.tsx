@@ -54,22 +54,22 @@ export default function Modal({
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-4"
               >
-                <Dialog.Panel className="relative overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl">
+                <Dialog.Panel className="relative text-left transition-all transform bg-white shadow-xl w-auto sm:w-[350px]">
                   <div className="px-4 pt-5 pb-4 bg-white">
                     <div className="mt-3 text-center">
                       <Dialog.Title
                         as="h3"
-                        className="text-lg font-medium leading-6 text-gray-900"
+                        className="text-2xl font-bold leading-6 text-gray-900"
                       >
                         {title}
                       </Dialog.Title>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">{description}</p>
+                        <p className="text-sm text-gray-600">{description}</p>
                       </div>
                       <div className="mt-2">{children}</div>
                     </div>
                   </div>
-                  <div className="flex flex-row-reverse items-center px-4 py-3 bg-gray-50 align-center">
+                  <div className="flex flex-row-reverse items-center px-4 py-3 bg-gray-50">
                     <div className="p-2">
                       <Button onClick={onSubmit}>Create</Button>
                     </div>

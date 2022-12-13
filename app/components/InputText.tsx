@@ -1,12 +1,12 @@
 type Props = {
   name: string;
-  description: string;
+  description?: string;
 };
 
 export default function InputText({ name, description }: Props): JSX.Element {
   return (
     <div className="flex flex-col items-start justify-start w-full">
-      <label htmlFor="name" className="font-bold text-gray-700 text-md">
+      <label htmlFor="name" className="text-sm font-bold text-gray-700">
         {name}
       </label>
       <p className="text-xs text-gray-500">{description}</p>

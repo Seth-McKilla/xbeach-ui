@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 
 import Button from "../components/Button";
+import InputText from "../components/InputText";
 import Modal from "../components/Modal";
 
 export default function ListProjects() {
@@ -20,16 +21,8 @@ export default function ListProjects() {
         open={displayNewProjectModal}
         setOpen={setDisplayNewProjectModal}
       >
-        <div className="w-full">
-          <label htmlFor="name" className="text-sm font-bold text-gray-700">
-            Project Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="w-full px-4 py-2 mt-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          />
+        <div className="flex justify-start w-full">
+          <InputText name="Project Name" />
         </div>
       </Modal>
 
