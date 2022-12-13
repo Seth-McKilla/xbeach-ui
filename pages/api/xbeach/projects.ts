@@ -1,7 +1,11 @@
 import type { NextApiResponse } from "next";
 import clientPromise from "lib/mongodb";
 
-import { apiHandler, type NextApiRequestAuthenticated } from "lib/api";
+import {
+  apiHandler,
+  fetchCollection,
+  type NextApiRequestAuthenticated,
+} from "lib/api";
 import { readParams } from "./params";
 
 const handler = apiHandler({
@@ -15,11 +19,13 @@ async function getProjects(
   req: NextApiRequestAuthenticated,
   res: NextApiResponse
 ) {
-  const client = await clientPromise;
+  const projectsCollection = await fetchCollection(clientPromise, "projects");
 
-  const db = client.db();
-
-  const projects = await db.collection("projects").find().toArray();
+  const projects = await projectsCollection
+    .find({
+      userId: req.user._id,
+    })
+    .toArray();
 
   res.status(200).json({ data: projects });
 }
