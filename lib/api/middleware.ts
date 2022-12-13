@@ -4,18 +4,15 @@ import type {
   NextApiResponse,
 } from "next/types";
 
-import type { ObjectId } from "mongodb";
 import { unstable_getServerSession as getServerSession } from "next-auth/next";
+import type { Session } from "next-auth";
 
 import { authOptions } from "../nextauth";
 
 export type Method = "GET" | "POST" | "PATCH" | "DELETE";
 
 export type NextApiRequestAuthenticated = NextApiRequest & {
-  user: {
-    _id: ObjectId;
-    email: string;
-  };
+  user: Session["user"];
 };
 
 export const apiHandler = (handler: { [key in Method]?: NextApiHandler }) => {
@@ -42,6 +39,8 @@ export const apiHandler = (handler: { [key in Method]?: NextApiHandler }) => {
           },
         });
       }
+
+      req.user = session.user;
 
       return handler[req.method](req, res);
     } catch (error) {

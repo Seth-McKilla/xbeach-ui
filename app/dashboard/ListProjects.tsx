@@ -1,36 +1,47 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
 
 import Button from "../components/Button";
 import Input from "../components/Input";
 import InputError from "../components/InputError";
 import InputLabel from "../components/InputLabel";
 import Modal from "../components/Modal";
+import { fetcher } from "lib/api";
 
 export default function ListProjects() {
   const { data: session } = useSession();
+  // const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
+  // console.log(projects);
+
+  const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
+    clearErrors,
     formState: { errors },
   } = useForm({
-    mode: "onBlur",
     defaultValues: {
       projectName: "",
     },
   });
 
-  const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
-
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  useEffect(() => {
+    if (!displayNewProjectModal) {
+      reset();
+      clearErrors();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [displayNewProjectModal]);
 
   return (
     <>
@@ -55,6 +66,7 @@ export default function ListProjects() {
             </div>
             <div className="mx-2">
               <Button
+                type="button"
                 variant="secondary"
                 onClick={() => setDisplayNewProjectModal(false)}
               >
