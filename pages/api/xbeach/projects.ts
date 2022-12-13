@@ -3,9 +3,9 @@ import clientPromise from "lib/mongodb";
 
 import {
   apiHandler,
-  fetchCollection,
   type NextApiRequestAuthenticated,
-} from "lib/api";
+} from "lib/api/middleware";
+import { fetchCollection } from "lib/api/utils";
 
 const handler = apiHandler({
   GET: getProjects,

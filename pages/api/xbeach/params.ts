@@ -1,4 +1,7 @@
-import { apiHandler, type NextApiRequestAuthenticated } from "lib/api";
+import {
+  apiHandler,
+  type NextApiRequestAuthenticated,
+} from "lib/api/middleware";
 
 import type { NextApiResponse } from "next";
 
