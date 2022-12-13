@@ -1,11 +1,21 @@
 import type { ButtonHTMLAttributes } from "react";
 
-export type Props = ButtonHTMLAttributes<HTMLButtonElement>;
+export type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "primary" | "secondary";
+};
 
-export default function Button({ children, ...rest }: Props) {
+export default function Button({
+  children,
+  variant = "primary",
+  ...rest
+}: Props) {
   return (
     <button
-      className="inline-block px-4 py-2 text-lg font-medium text-center text-white bg-blue-800 rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+      className={`inline-block px-4 py-2 font-medium text-center rounded-md text-md ${
+        variant === "primary"
+          ? "text-white bg-blue-800 hover:bg-blue-900"
+          : "hover:bg-blue-100 text-blue-800 bg-gray-50"
+      }`}
       {...rest}
     >
       {children}
