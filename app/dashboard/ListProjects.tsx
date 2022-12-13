@@ -13,6 +13,8 @@ import { fetcher } from "lib/api/utils";
 
 export default function ListProjects() {
   const { mutate } = useSWRConfig();
+  // TODO: Handle error
+  // TODO: Handle loading
   const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
@@ -29,14 +31,13 @@ export default function ListProjects() {
     },
   });
 
-  const onSubmit = ({ name }) => {
-    return fetcher("/api/xbeach/projects", {
+  const onSubmit = async ({ name }) => {
+    await fetcher("/api/xbeach/projects", {
       method: "POST",
       body: JSON.stringify({ name }),
-    }).then((data) => {
-      mutate("/api/xbeach/projects");
-      setDisplayNewProjectModal(false);
     });
+    mutate("/api/xbeach/projects");
+    setDisplayNewProjectModal(false);
   };
 
   useEffect(() => {
