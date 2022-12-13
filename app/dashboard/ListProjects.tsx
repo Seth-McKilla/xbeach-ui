@@ -15,8 +15,13 @@ export default function ListProjects() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  console.log(watch());
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
@@ -36,11 +41,7 @@ export default function ListProjects() {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col justify-start w-full"
         >
-          <InputText
-            {...register("projectName", { required: true })}
-            name="projectName"
-            label="Project Name"
-          />
+          <InputText {...register("projectName", { required: true })} />
           {errors.projectName && (
             <span className="flex justify-start mt-1 text-xs text-red-500">
               This field is required
