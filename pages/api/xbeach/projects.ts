@@ -24,7 +24,7 @@ async function getProjects(
 
   const projects = await projectsCollection
     .find({
-      userId: req.user._id,
+      userId: req.user.id,
     })
     .toArray();
 
@@ -38,7 +38,7 @@ export async function postProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.insertOne({
-    userId: req.user._id,
+    userId: req.user.id,
     name: req.body.name,
     models: [],
   });
@@ -56,7 +56,7 @@ export async function patchProject(
     _id: req.body._id,
   });
 
-  if (project.userId !== req.user._id) {
+  if (project.userId !== req.user.id) {
     return res.status(401).json({
       data: null,
       error: {
@@ -90,7 +90,7 @@ export async function deleteProject(
     _id: req.body._id,
   });
 
-  if (project.userId !== req.user._id) {
+  if (project.userId !== req.user.id) {
     return res.status(401).json({
       data: null,
       error: {

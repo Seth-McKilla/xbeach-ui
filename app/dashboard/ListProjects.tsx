@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
 
 import Button from "../components/Button";
 import Input from "../components/Input";
@@ -14,8 +13,14 @@ import { fetcher } from "lib/api";
 
 export default function ListProjects() {
   const { data: session } = useSession();
-  const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
-  console.log(projects);
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const res = await fetch("/api/xbeach/projects");
+      const { data } = await res.json();
+      setProjects(data);
+    })();
+  }, []);
 
   const [displayNewProjectModal, setDisplayNewProjectModal] = useState(false);
 
