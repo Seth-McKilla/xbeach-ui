@@ -26,7 +26,7 @@ async function getProject(
     _id: toOID(req.query.id as string),
   });
 
-  if (project.userId !== req.user.id) {
+  if (project.userId.toString() !== req.user.id) {
     return res.status(401).json({
       data: null,
       error: {
@@ -49,7 +49,7 @@ export async function patchProject(
     _id: toOID(req.query.id as string),
   });
 
-  if (project.userId !== req.user.id) {
+  if (project.userId.toString() !== req.user.id) {
     return res.status(401).json({
       data: null,
       error: {
@@ -83,7 +83,7 @@ export async function deleteProject(
     _id: toOID(req.query.id as string),
   });
 
-  if (project.userId !== req.user.id) {
+  if (project.userId.toString() !== req.user.id) {
     return res.status(401).json({
       data: null,
       error: {
