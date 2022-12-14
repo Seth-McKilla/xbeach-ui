@@ -8,7 +8,12 @@ type Props = CardProps & {
 
 export default function LinkCard({ href, ...props }: Props) {
   return (
-    <Link href={href}>
+    <Link
+      href={href}
+      style={{
+        display: "contents",
+      }}
+    >
       <Card {...props} />
     </Link>
   );
