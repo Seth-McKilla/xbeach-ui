@@ -1,3 +1,5 @@
+import { toOID } from "lib/mongodb/utils";
+
 import type { NextApiResponse } from "next";
 import clientPromise from "lib/mongodb";
 
@@ -22,7 +24,7 @@ async function getProjects(
 
   const projects = await projectsCollection
     .find({
-      userId: req.user.id,
+      userId: toOID(req.user.id),
     })
     .toArray();
 
@@ -36,7 +38,7 @@ export async function postProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.insertOne({
-    userId: req.user.id,
+    userId: toOID(req.user.id),
     name: req.body.name,
     models: [],
   });

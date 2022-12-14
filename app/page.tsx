@@ -29,7 +29,7 @@ export default function HomePage() {
         </h3>
         <p className="text-center text-md">
           {
-            "This project is not affiliated with Deltares or XBeach in any way. It is a community project to make XBeach more accessible to the general public. If you would like to contribute, feel free to visit the repository on "
+            "This project is not affiliated with Deltares or XBeach in any way. It is a community project to make XBeach more accessible to the general public. If you would like to contribute, feel free to visit the open source repository on "
           }
           <a
             href="https://github.com/Seth-McKilla/xbeach-ui"
