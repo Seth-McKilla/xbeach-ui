@@ -8,40 +8,32 @@ import {
 import { fetchCollection } from "lib/api/utils";
 
 const handler = apiHandler({
-  GET: getProjects,
-  POST: postProject,
+  GET: getProject,
   PATCH: patchProject,
   DELETE: deleteProject,
 });
 
 export default handler;
 
-async function getProjects(
+async function getProject(
   req: NextApiRequestAuthenticated,
   res: NextApiResponse
 ) {
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
-  const projects = await projectsCollection
-    .find({
-      userId: req.user.id,
-    })
-    .toArray();
-
-  res.status(200).json({ data: projects });
-}
-
-export async function postProject(
-  req: NextApiRequestAuthenticated,
-  res: NextApiResponse
-) {
-  const projectsCollection = await fetchCollection(clientPromise, "projects");
-
-  const project = await projectsCollection.insertOne({
-    userId: req.user.id,
-    name: req.body.name,
-    models: [],
+  const project = await projectsCollection.findOne({
+    _id: req.query.id,
   });
+
+  if (project.userId !== req.user.id) {
+    return res.status(401).json({
+      data: null,
+      error: {
+        code: "unauthorized",
+        message: "You are not authenticated.",
+      },
+    });
+  }
 
   res.status(200).json({ data: project });
 }
@@ -53,7 +45,7 @@ export async function patchProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.findOne({
-    _id: req.body._id,
+    _id: req.query.id,
   });
 
   if (project.userId !== req.user.id) {
