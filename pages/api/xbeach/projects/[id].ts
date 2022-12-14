@@ -1,5 +1,6 @@
 import type { NextApiResponse } from "next";
 import clientPromise from "lib/mongodb";
+import { toOID } from "lib/mongodb/utils";
 
 import {
   apiHandler,
@@ -22,7 +23,7 @@ async function getProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.findOne({
-    _id: req.query.id,
+    _id: toOID(req.query.id as string),
   });
 
   if (project.userId !== req.user.id) {
@@ -45,7 +46,7 @@ export async function patchProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.findOne({
-    _id: req.query.id,
+    _id: toOID(req.query.id as string),
   });
 
   if (project.userId !== req.user.id) {
@@ -60,7 +61,7 @@ export async function patchProject(
 
   const updatedProject = await projectsCollection.updateOne(
     {
-      _id: req.body._id,
+      _id: toOID(req.query.id as string),
     },
     {
       $set: {
@@ -79,7 +80,7 @@ export async function deleteProject(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection.findOne({
-    _id: req.body._id,
+    _id: toOID(req.query.id as string),
   });
 
   if (project.userId !== req.user.id) {
@@ -104,7 +105,7 @@ export async function deleteProject(
   }
 
   const deletedProject = await projectsCollection.deleteOne({
-    _id: req.body._id,
+    _id: toOID(req.query.id as string),
   });
 
   res.status(200).json({ data: deletedProject });

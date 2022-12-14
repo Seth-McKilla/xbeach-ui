@@ -1,7 +1,6 @@
-import { toOID } from "lib/mongodb/utils";
-
 import type { NextApiResponse } from "next";
 import clientPromise from "lib/mongodb";
+import { toOID } from "lib/mongodb/utils";
 
 import {
   apiHandler,
