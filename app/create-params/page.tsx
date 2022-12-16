@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { readXBeachParams } from "pages/api/xbeach/params";
+import { readParams } from "pages/api/xbeach/params";
 import InputsParams, { type ParamCollection } from "./InputsParams";
 
 export default async function CreateParamsPage() {
@@ -20,5 +20,5 @@ export default async function CreateParamsPage() {
 }
 
 async function getParams() {
-  return await readXBeachParams();
+  return await readParams();
 }
