@@ -1,12 +1,13 @@
 import type { NextApiResponse } from "next";
-import clientPromise from "lib/mongodb";
-import { toOID } from "lib/mongodb/utils";
 
+import { readParams } from "../params";
 import {
   apiHandler,
   type NextApiRequestAuthenticated,
 } from "lib/api/middleware";
 import { fetchCollection } from "lib/api/utils";
+import clientPromise from "lib/mongodb";
+import { toOID } from "lib/mongodb/utils";
 
 const handler = apiHandler({
   GET: getModels,
@@ -36,9 +37,15 @@ export async function postModel(
 ) {
   const modelsCollection = await fetchCollection(clientPromise, "models");
 
+  const { projectId, ...body } = req.body;
+
+  const params = await readParams();
+
   const model = await modelsCollection.insertOne({
     userId: toOID(req.user.id),
-    ...req.body,
+    projectId: toOID(projectId),
+    ...body,
+    params,
   });
 
   res.status(200).json({ data: model });
