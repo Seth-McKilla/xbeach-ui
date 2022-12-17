@@ -4,9 +4,10 @@ import { usePathname } from "next/navigation";
 import useSWR from "swr";
 
 import ListModels from "./ListModels";
+import ModalNewModel from "./ModalNewModel";
 import { fetcher } from "lib/api/utils";
 
-export default function DashboardPage() {
+export default function ProjectPage() {
   const pathname = usePathname();
   const [, , , id] = pathname.split("/");
   const { data: project } = useSWR(`/api/xbeach/projects/${id}`, fetcher);
@@ -16,6 +17,7 @@ export default function DashboardPage() {
       <h1 className="text-2xl font-bold text-blue-800">{project?.name}</h1>
       <div className="mt-4">
         <ListModels models={project?.models} />
+        <ModalNewModel projectId={id} />
       </div>
     </div>
   );

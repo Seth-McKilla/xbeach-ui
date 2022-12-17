@@ -6,7 +6,7 @@ type Props = {
 export default function InputLabel({ children, htmlFor }: Props) {
   return (
     <label
-      className="flex justify-start text-sm font-medium text-gray-700"
+      className="flex justify-start mt-4 text-sm font-medium text-gray-700"
       htmlFor={htmlFor}
     >
       {children}
