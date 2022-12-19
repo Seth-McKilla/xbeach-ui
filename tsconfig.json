@@ -16,7 +16,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "paths": {
+      "@/api/*": ["./pages/api/*"],
+      "@/components/*": ["./app/components/*"],
+      "@/lib/*": ["./lib/*"]
+    },
     "plugins": [
       {
         "name": "next"

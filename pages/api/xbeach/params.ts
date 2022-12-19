@@ -1,9 +1,9 @@
+import type { NextApiResponse } from "next";
+
 import {
   apiHandler,
   type NextApiRequestAuthenticated,
-} from "lib/api/middleware";
-
-import type { NextApiResponse } from "next";
+} from "@/lib/api/middleware";
 
 const handler = apiHandler({
   GET: getParams,

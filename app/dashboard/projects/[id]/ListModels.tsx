@@ -1,6 +1,6 @@
 "use client";
 
-import LinkCard from "../../../components/LinkCard";
+import LinkCard from "@/components/LinkCard";
 
 type Props = {
   models: Array<{

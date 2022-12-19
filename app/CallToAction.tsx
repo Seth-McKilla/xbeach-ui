@@ -2,7 +2,7 @@
 
 import { useSession } from "next-auth/react";
 
-import LinkButton from "./components/LinkButton";
+import LinkButton from "@/components/LinkButton";
 
 export default function CallToAction() {
   const { data: session } = useSession();

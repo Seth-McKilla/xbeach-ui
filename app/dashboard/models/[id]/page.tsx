@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 
-import { fetcher } from "lib/api/utils";
+import { fetcher } from "@/lib/api/utils";
 
 export default function ModelPage() {
   const pathname = usePathname();

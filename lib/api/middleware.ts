@@ -7,7 +7,7 @@ import type {
 import { unstable_getServerSession as getServerSession } from "next-auth/next";
 import type { Session } from "next-auth";
 
-import { authOptions } from "lib/nextauth";
+import { authOptions } from "@/lib/nextauth";
 
 export type Method = "GET" | "POST" | "PATCH" | "DELETE";
 

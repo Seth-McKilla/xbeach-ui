@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 import ListModels from "./ListModels";
 import ModalNewModel from "./ModalNewModel";
-import { fetcher } from "lib/api/utils";
+import { fetcher } from "@/lib/api/utils";
 
 export default function ProjectPage() {
   const pathname = usePathname();

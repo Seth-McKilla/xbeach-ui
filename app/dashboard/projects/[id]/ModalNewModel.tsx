@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useSWRConfig } from "swr";
 
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
-import InputError from "../../../components/InputError";
-import InputLabel from "../../../components/InputLabel";
-import Modal from "../../../components/Modal";
-import { fetcher } from "lib/api/utils";
+import Button from "@/components/Button";
+import Input from "@/components/Input";
+import InputError from "@/components/InputError";
+import InputLabel from "@/components/InputLabel";
+import Modal from "@/components/Modal";
+import { fetcher } from "@/lib/api/utils";
 
 type Props = {
   projectId: string;

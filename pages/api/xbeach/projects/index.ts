@@ -1,12 +1,12 @@
 import type { NextApiResponse } from "next";
-import clientPromise from "lib/mongodb";
-import { toOID } from "lib/mongodb/utils";
 
 import {
   apiHandler,
   type NextApiRequestAuthenticated,
-} from "lib/api/middleware";
-import { fetchCollection } from "lib/api/utils";
+} from "@/lib/api/middleware";
+import { fetchCollection } from "@/lib/api/utils";
+import clientPromise from "@/lib/mongodb";
+import { toOID } from "@/lib/mongodb/utils";
 
 const handler = apiHandler({
   GET: getProjects,

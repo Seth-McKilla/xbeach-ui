@@ -1,6 +1,6 @@
-import InputCheckbox from "../components/InputCheckbox";
-import InputNumber from "../components/InputNumber";
-import Input from "../components/Input";
+import InputCheckbox from "@/components/InputCheckbox";
+import InputNumber from "@/components/InputNumber";
+import Input from "@/components/Input";
 
 export type Param = {
   [key: string]: any;

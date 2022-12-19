@@ -1,13 +1,13 @@
 import type { NextApiResponse } from "next";
 
-import { readParams } from "../params";
 import {
   apiHandler,
   type NextApiRequestAuthenticated,
-} from "lib/api/middleware";
-import { fetchCollection } from "lib/api/utils";
-import clientPromise from "lib/mongodb";
-import { toOID } from "lib/mongodb/utils";
+} from "@/lib/api/middleware";
+import { fetchCollection } from "@/lib/api/utils";
+import clientPromise from "@/lib/mongodb";
+import { toOID } from "@/lib/mongodb/utils";
+import { readParams } from "@/api/xbeach/params";
 
 const handler = apiHandler({
   GET: getModels,

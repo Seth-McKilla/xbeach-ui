@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Button, { type Props as ButtonProps } from "./Button";
+import Button, { type Props as ButtonProps } from "@/components/Button";
 
 type Props = ButtonProps & {
   href: string;

@@ -3,7 +3,7 @@
 import useSWR from "swr";
 
 import LinkCard from "../components/LinkCard";
-import { fetcher } from "lib/api/utils";
+import { fetcher } from "@/lib/api/utils";
 
 export default function ListProjects() {
   // TODO: Handle error

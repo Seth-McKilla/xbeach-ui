@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Card, { type Props as CardProps } from "./Card";
+import Card, { type Props as CardProps } from "@/components/Card";
 
 type Props = CardProps & {
   href: string;
