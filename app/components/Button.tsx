@@ -2,11 +2,13 @@ import type { ButtonHTMLAttributes } from "react";
 
 export type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
+  styles?: string;
 };
 
 export default function Button({
   children,
   variant = "primary",
+  styles,
   ...rest
 }: Props) {
   return (
@@ -15,7 +17,7 @@ export default function Button({
         variant === "primary"
           ? "text-white bg-blue-800 hover:bg-blue-900"
           : "hover:bg-blue-100 text-blue-800 bg-gray-50"
-      }`}
+      } ${styles}`}
       {...rest}
     >
       {children}
