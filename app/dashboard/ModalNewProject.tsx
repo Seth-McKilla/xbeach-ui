@@ -9,7 +9,7 @@ import Input from "@/components/Input";
 import InputError from "@/components/InputError";
 import InputLabel from "@/components/InputLabel";
 import Modal from "@/components/Modal";
-import { fetcher } from "lib/api/utils";
+import { fetcher } from "@/lib/api/utils";
 
 export default function ListProjects() {
   const { mutate } = useSWRConfig();
