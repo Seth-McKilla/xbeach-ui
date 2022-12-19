@@ -12,7 +12,7 @@ specifiers:
   concurrently: ^7.6.0
   eslint: 8.30.0
   eslint-config-next: 13.0.7
-  mongodb: 4.12.1
+  mongodb: 4.13.0
   next: 13.0.7
   next-auth: 4.18.5
   nodemailer: 6.8.0
@@ -27,9 +27,9 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
-  '@next-auth/mongodb-adapter': 1.1.1_vwat2dbfpguc44atdlgpigs6xi
+  '@next-auth/mongodb-adapter': 1.1.1_q742ivtjdkqpqhs25ud54a7gqe
   '@next/font': 13.0.7
-  mongodb: 4.12.1
+  mongodb: 4.13.0
   next: 13.0.7_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.18.5_gxrb4puqhmlxj5cjmftw47fgty
   nodemailer: 6.8.0
@@ -919,13 +919,13 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@next-auth/mongodb-adapter/1.1.1_vwat2dbfpguc44atdlgpigs6xi:
+  /@next-auth/mongodb-adapter/1.1.1_q742ivtjdkqpqhs25ud54a7gqe:
     resolution: {integrity: sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
     dependencies:
-      mongodb: 4.12.1
+      mongodb: 4.13.0
       next-auth: 4.18.5_gxrb4puqhmlxj5cjmftw47fgty
     dev: false
 
@@ -2541,8 +2541,8 @@ packages:
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb/4.12.1:
-    resolution: {integrity: sha512-koT87tecZmxPKtxRQD8hCKfn+ockEL2xBiUvx3isQGI6mFmagWt4f4AyCE9J4sKepnLhMacoCTQQA6SLAI2L6w==}
+  /mongodb/4.13.0:
+    resolution: {integrity: sha512-+taZ/bV8d1pYuHL4U+gSwkhmDrwkWbH1l4aah4YpmpscMwgFBkufIKxgP/G7m87/NUuQzc2Z75ZTI7ZOyqZLbw==}
     engines: {node: '>=12.9.0'}
     dependencies:
       bson: 4.7.0
