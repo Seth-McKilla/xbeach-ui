@@ -16,7 +16,7 @@ export default function ListModels({ models }: Props) {
       {models?.map(({ _id, name, description }) => (
         <LinkCard
           key={_id}
-          href={`dashboard/models/${_id}`}
+          href={`app/models/${_id}`}
           title={name}
           description={description}
         />

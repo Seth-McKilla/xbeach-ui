@@ -28,7 +28,7 @@ export default function SignInForm() {
       const response = await signIn("email", {
         email,
         redirect: false,
-        callbackUrl: "/dashboard",
+        callbackUrl: "/app",
       });
 
       if (!response.ok) {

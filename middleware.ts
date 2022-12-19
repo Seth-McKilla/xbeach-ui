@@ -6,10 +6,10 @@ export default async function middleware(req: NextRequest) {
   const token = await getToken({ req });
 
   if (pathname === "/signin" && !!token) {
-    return NextResponse.redirect(new URL("/dashboard", req.url));
+    return NextResponse.redirect(new URL("/app", req.url));
   }
 
-  if (pathname.startsWith("/dashboard") && !token) {
+  if (pathname.startsWith("/app") && !token) {
     return NextResponse.redirect(new URL("/signin", req.url));
   }
 

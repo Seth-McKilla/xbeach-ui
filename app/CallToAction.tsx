@@ -8,7 +8,7 @@ export default function CallToAction() {
   const { data: session } = useSession();
 
   if (session) {
-    return <LinkButton href="/dashboard">Go to Dashboard</LinkButton>;
+    return <LinkButton href="/app">Go to Dashboard</LinkButton>;
   }
 
   return <LinkButton href="/signin">Get Started</LinkButton>;

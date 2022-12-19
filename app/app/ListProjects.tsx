@@ -15,7 +15,7 @@ export default function ListProjects() {
       {projects?.map(({ _id, name, models }) => (
         <LinkCard
           key={_id}
-          href={`dashboard/projects/${_id}`}
+          href={`app/projects/${_id}`}
           title={name}
           description={`${models.length} models`}
         />
