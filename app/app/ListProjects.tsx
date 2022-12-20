@@ -18,7 +18,9 @@ export default function ListProjects() {
           key={_id}
           href={`app/projects/${_id}`}
           title={name}
-          description={`${models.length} models`}
+          description={`${models.length} model${
+            models.length > 1 || models.length === 0 ? "s" : ""
+          }`}
         />
       ))}
     </div>

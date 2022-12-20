@@ -22,9 +22,19 @@ async function getProject(
 ) {
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
-  const project = await projectsCollection.findOne({
-    _id: toOID(req.query.id as string),
-  });
+  const project = await projectsCollection
+    .aggregate([
+      { $match: { _id: toOID(req.query.id as string) } },
+      {
+        $lookup: {
+          from: "models",
+          localField: "_id",
+          foreignField: "projectId",
+          as: "models",
+        },
+      },
+    ])
+    .next();
 
   if (project.userId.toString() !== req.user.id) {
     return res.status(401).json({
