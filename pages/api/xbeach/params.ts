@@ -6,6 +6,19 @@ import {
 } from "@/lib/api/middleware";
 import { stringToNumber } from "@/lib/utils";
 
+export type Param = {
+  default?: string | number | boolean;
+  advanced?: boolean;
+  silent?: boolean;
+  required?: boolean;
+  description?: string;
+  units?: string;
+  range?: string;
+  type?: string;
+  options?: string;
+  example?: string;
+};
+
 const handler = apiHandler({
   GET: getParams,
 });
@@ -37,7 +50,7 @@ export async function readParams() {
     }
   }
 
-  const params = {};
+  const params: Record<string, Record<string, Param>> = {};
   let currentParam: string;
 
   await Promise.all(
@@ -64,8 +77,8 @@ export async function readParams() {
           key = key.trim();
           const value = stringToNumber(stringValue.trim());
           if (key.match(/(advanced|silent|required)/i)) {
-            key.split(",").forEach((k) => {
-              params[title][currentParam][k] = true;
+            key.split(",").forEach((key) => {
+              params[title][currentParam][key] = true;
             });
           } else {
             params[title][currentParam][key] = value;

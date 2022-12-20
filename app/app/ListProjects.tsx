@@ -9,7 +9,6 @@ export default function ListProjects() {
   // TODO: Handle error
   // TODO: Handle loading
   const { data: projects } = useSWR("/api/xbeach/projects", fetcher);
-  console.log(projects);
 
   return (
     <div className="container grid grid-cols-1 gap-4 mx-auto mb-6 sm:grid-cols-3 lg:grid-cols-5">
