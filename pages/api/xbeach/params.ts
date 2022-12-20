@@ -4,20 +4,18 @@ import {
   apiHandler,
   type NextApiRequestAuthenticated,
 } from "@/lib/api/middleware";
-import { stringToNumber } from "@/lib/utils";
+import { stringToNumber } from "@/lib/common";
 
-export type Param = {
-  default?: string | number | boolean;
-  advanced?: boolean;
-  silent?: boolean;
-  required?: boolean;
-  description?: string;
-  units?: string;
-  range?: string;
-  type?: string;
-  options?: string;
-  example?: string;
+const defaultParam = {
+  default: "",
+  advanced: false,
+  silent: false,
+  required: false,
+  description: "",
+  units: "",
+  range: "",
 };
+export type Param = Partial<typeof defaultParam>;
 
 const handler = apiHandler({
   GET: getParams,
@@ -71,7 +69,7 @@ export async function readParams() {
 
         if (line.match(/^[a-zA-Z]/)) {
           currentParam = line;
-          params[title][currentParam] = {};
+          params[title][currentParam] = { ...defaultParam };
         } else if (line.match(/^:/)) {
           let [, key, stringValue] = line.split(":");
           key = key.trim();
