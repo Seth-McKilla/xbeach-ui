@@ -41,19 +41,11 @@ export async function postModel(
 
   const params = await readParams();
 
-  const defaultParams = params.map(({ title, params }) => ({
-    [title]: params.reduce((acc, param) => {
-      acc[param.name] =
-        typeof +param.default === "number" ? +param.default : param.default;
-      return acc;
-    }, {}),
-  }));
-
   const model = await modelsCollection.insertOne({
     userId: toOID(req.user.id),
     projectId: toOID(projectId),
     ...body,
-    params: defaultParams,
+    params,
   });
 
   res.status(200).json({ data: model });

@@ -7,6 +7,7 @@ import {
 import { fetchCollection } from "@/lib/api/utils";
 import clientPromise from "@/lib/mongodb";
 import { toOID } from "@/lib/mongodb/utils";
+import { readParams } from "../params";
 
 const handler = apiHandler({
   GET: getProjects,
@@ -20,6 +21,8 @@ async function getProjects(
   res: NextApiResponse
 ) {
   const projectsCollection = await fetchCollection(clientPromise, "projects");
+
+  const params = await readParams();
 
   const projects = await projectsCollection
     .aggregate([

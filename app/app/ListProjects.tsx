@@ -13,7 +13,7 @@ export default function ListProjects() {
 
   return (
     <div className="container grid grid-cols-1 gap-4 mx-auto mb-6 sm:grid-cols-3 lg:grid-cols-5">
-      {projects?.map(({ _id, name, models }) => (
+      {projects?.map(({ _id, name, models = [] }) => (
         <LinkCard
           key={_id}
           href={`app/projects/${_id}`}

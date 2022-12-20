@@ -4,6 +4,7 @@ import {
   apiHandler,
   type NextApiRequestAuthenticated,
 } from "@/lib/api/middleware";
+import { stringToNumber } from "@/lib/utils";
 
 const handler = apiHandler({
   GET: getParams,
@@ -59,9 +60,9 @@ export async function readParams() {
           currentParam = line;
           params[title][currentParam] = {};
         } else if (line.match(/^:/)) {
-          let [, key, value] = line.split(":");
+          let [, key, stringValue] = line.split(":");
           key = key.trim();
-          value = value.trim() || "-";
+          const value = stringToNumber(stringValue.trim());
           if (key.match(/(advanced|silent|required)/i)) {
             key.split(",").forEach((k) => {
               params[title][currentParam][k] = true;
@@ -76,15 +77,5 @@ export async function readParams() {
     })
   );
 
-  return Object.keys(params).map((key) => {
-    return {
-      title: key,
-      params: Object.keys(params[key]).map((param) => {
-        return {
-          name: param,
-          ...params[key][param],
-        };
-      }),
-    };
-  });
+  return params;
 }
