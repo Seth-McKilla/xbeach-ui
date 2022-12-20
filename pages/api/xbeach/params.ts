@@ -6,24 +6,22 @@ import {
 } from "@/lib/api/middleware";
 import { stringToNumber } from "@/lib/common";
 
-const defaultParam = {
-  default: "",
-  advanced: false,
-  silent: false,
-  required: false,
-  description: "",
-  units: "",
-  range: "",
-};
-export type Param = Partial<typeof defaultParam>;
-
 const handler = apiHandler({
   GET: getParams,
 });
 
 export default handler;
 
-const ignoredParams = ["spaceparams"];
+const defaultParam = {
+  default: "",
+  description: "",
+  units: "",
+  range: "",
+  advanced: false,
+  silent: false,
+  required: false,
+};
+export type Param = Partial<typeof defaultParam>;
 
 async function getParams(
   req: NextApiRequestAuthenticated,
@@ -55,6 +53,7 @@ export async function readParams() {
     tables.map(async (table) => {
       const title = table.split("partable_")[1].replace(".tab", "");
 
+      const ignoredParams = ["spaceparams"];
       if (ignoredParams.includes(title)) return;
 
       params[title] = {};
@@ -67,22 +66,52 @@ export async function readParams() {
       for (let line of text.split("\n")) {
         line = line.trim();
 
+        /* 
+          1. Create a new parameter category
+        */
         if (line.match(/^[a-zA-Z]/)) {
           currentParam = line;
           params[title][currentParam] = { ...defaultParam };
-        } else if (line.match(/^:/)) {
+          continue;
+        }
+
+        /* 
+          2. Format parameter values
+        */
+        if (line.match(/^:/)) {
           let [, key, stringValue] = line.split(":");
           key = key.trim();
-          const value = stringToNumber(stringValue.trim());
-          if (key.match(/(advanced|silent|required)/i)) {
-            key.split(",").forEach((key) => {
-              params[title][currentParam][key] = true;
-            });
-          } else {
-            params[title][currentParam][key] = value;
+          let value: string | number | boolean;
+
+          switch (key) {
+            case "default":
+              value = stringToNumber(stringValue.trim());
+              break;
+
+            case "description":
+              value = stringValue.trim();
+              break;
+
+            case "units":
+              value = stringValue.trim();
+              if (value === "-") value = "";
+              break;
+
+            case "range":
+              value = stringValue.trim();
+              break;
+
+            case "advanced":
+            case "silent":
+            case "required":
+              value = true;
+              break;
           }
-        } else {
-          continue;
+
+          /* 
+            3. Add formatted parameter to correct category
+          */
+          params[title][currentParam][key] = value;
         }
       }
     })
