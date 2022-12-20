@@ -38,7 +38,7 @@ export default function ListModels({ projectId }: Props) {
       method: "POST",
       body: JSON.stringify({ projectId, name, description }),
     });
-    mutate("/api/xbeach/models");
+    mutate(`/api/xbeach/projects/${projectId}`);
     setDisplayNewModelModal(false);
   };
 
