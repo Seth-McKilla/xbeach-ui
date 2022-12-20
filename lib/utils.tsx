@@ -11,3 +11,7 @@ export const stringToNumber = (value: string) => {
   }
   return Number(value);
 };
+
+export const stringToArray = (value: string) => {
+  return value.split(",").map((item) => stringToNumber(item.trim()));
+};
