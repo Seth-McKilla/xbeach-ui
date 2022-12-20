@@ -22,9 +22,17 @@ async function getProjects(
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const projects = await projectsCollection
-    .find({
-      userId: toOID(req.user.id),
-    })
+    .aggregate([
+      { $match: { userId: toOID(req.user.id) } },
+      {
+        $lookup: {
+          from: "models",
+          localField: "_id",
+          foreignField: "projectId",
+          as: "models",
+        },
+      },
+    ])
     .toArray();
 
   res.status(200).json({ data: projects });

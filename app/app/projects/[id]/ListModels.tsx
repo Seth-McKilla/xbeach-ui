@@ -7,6 +7,7 @@ type Props = {
     _id: string;
     name: string;
     description: string;
+    params: Record<string, Record<string, string | number>>;
   }>;
 };
 
