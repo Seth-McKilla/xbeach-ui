@@ -9,6 +9,7 @@ specifiers:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   autoprefixer: ^10.4.12
+  clsx: 1.2.1
   concurrently: ^7.6.0
   eslint: 8.30.0
   eslint-config-next: 13.0.7
@@ -22,6 +23,7 @@ specifiers:
   react-dom: 18.2.0
   react-hook-form: 7.41.0
   swr: 2.0.0
+  tailwind-merge: 1.8.0
   tailwindcss: ^3.1.8
   typescript: 4.9.4
 
@@ -29,6 +31,7 @@ dependencies:
   '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
   '@next-auth/mongodb-adapter': 1.1.1_q742ivtjdkqpqhs25ud54a7gqe
   '@next/font': 13.0.7
+  clsx: 1.2.1
   mongodb: 4.13.0
   next: 13.0.7_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.18.5_gxrb4puqhmlxj5cjmftw47fgty
@@ -37,6 +40,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.41.0_react@18.2.0
   swr: 2.0.0_react@18.2.0
+  tailwind-merge: 1.8.0
 
 devDependencies:
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.1.8
@@ -1473,6 +1477,11 @@ packages:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -3280,6 +3289,10 @@ packages:
       '@pkgr/utils': 2.3.1
       tslib: 2.4.0
     dev: true
+
+  /tailwind-merge/1.8.0:
+    resolution: {integrity: sha512-tER/2SbYRdfPYg6m4pDWZSlbymLTmDi+dx4iCsJmgmz4UDGzgnVelOvBe3GNtGCw9Bmc4MiObfJJbKeVL+KnMQ==}
+    dev: false
 
   /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
