@@ -7,7 +7,7 @@ import { fetcher } from "@/lib/api/utils";
 
 export default function ModelPage() {
   const pathname = usePathname();
-  const [, , , id] = pathname.split("/");
+  const id = pathname.split("/").pop();
   const { data: model } = useSWR(`/api/xbeach/models/${id}`, fetcher);
 
   return (

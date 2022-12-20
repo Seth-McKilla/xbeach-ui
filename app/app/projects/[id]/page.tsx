@@ -10,7 +10,7 @@ import { fetcher } from "@/lib/api/utils";
 
 export default function ProjectPage() {
   const pathname = usePathname();
-  const [, , , id] = pathname.split("/");
+  const id = pathname.split("/").pop();
   const { data: project, isLoading } = useSWR(
     `/api/xbeach/projects/${id}`,
     fetcher
