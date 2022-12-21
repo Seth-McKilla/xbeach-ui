@@ -1,4 +1,4 @@
-import { deepSearchAndReplace, stringToNumber } from "@/lib/common";
+import { stringToNumber } from "@/lib/common";
 
 const defaultParam = {
   default: "",
@@ -10,6 +10,38 @@ const defaultParam = {
   required: false,
 };
 export type Param = Partial<typeof defaultParam>;
+
+export const deepSearchAndReplaceParams = (
+  srcObj: any,
+  replacementsObj: { [key: string]: any }
+) => {
+  const replacementKeys = Object.keys(replacementsObj);
+  const result: any = {};
+
+  Object.keys(srcObj).forEach((key) => {
+    if (typeof srcObj[key] === "object") {
+      result[key] = deepSearchAndReplaceParams(srcObj[key], replacementsObj);
+    } else {
+      replacementKeys.forEach((replacementKey) => {
+        if (
+          typeof srcObj[key] === "string" &&
+          srcObj[key].includes(replacementKey)
+        ) {
+          srcObj[key] = srcObj[key].replace(
+            replacementKey,
+            replacementsObj[replacementKey]
+          );
+          try {
+            srcObj[key] = eval(srcObj[key]);
+          } catch (_) {}
+        } else {
+          result[key] = srcObj[key];
+        }
+      });
+    }
+  });
+  return result;
+};
 
 export async function readParams() {
   const response = await fetch(
@@ -115,7 +147,7 @@ export async function readParams() {
   );
 
   // 6. REPLACE GLOBAL VARIABLE VALUES
-  const formattedParams = deepSearchAndReplace(params, globalVarDefs);
+  const formattedParams = deepSearchAndReplaceParams(params, globalVarDefs);
 
   return formattedParams;
 }
