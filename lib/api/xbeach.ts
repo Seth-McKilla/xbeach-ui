@@ -1,4 +1,8 @@
-import { stringToNumber } from "@/lib/common";
+import {
+  deepSearchAndReplace,
+  removeEscapedQuotes,
+  stringToNumber,
+} from "@/lib/common";
 
 const defaultParam = {
   default: "",
@@ -19,6 +23,7 @@ export async function readParams() {
 
   const tables: Array<string> = [];
 
+  // 1. CREATE ARRAY OF TABLE FILENAMES TO FETCH
   for (let line of text.split("\n")) {
     if (line.startsWith(".. include::")) {
       tables.push(line.split("/")[1].replace("\r", ""));
@@ -26,7 +31,12 @@ export async function readParams() {
   }
 
   const params: Record<string, Record<string, Param>> = {};
+
   let currentParam: string;
+
+  // 2. INSTANTIATE GLOBAL VARIABLES (FOR REPLACING PARAMETER VALUES)
+  const globalVars = ["tstart", "tstop"];
+  const globalVarDefs = {};
 
   await Promise.all(
     tables.map(async (table) => {
@@ -45,26 +55,32 @@ export async function readParams() {
       for (let line of text.split("\n")) {
         line = line.trim();
 
-        /* 
-            1. Create a new parameter category
-          */
+        // 3. CREATE A NEW PARAMETER CATEGORY
         if (line.match(/^[a-zA-Z]/)) {
           currentParam = line;
           params[title][currentParam] = { ...defaultParam };
           continue;
         }
 
-        /* 
-            2. Format parameter values
-          */
+        // 4. FORMAT PARAMETER VALUES
         if (line.match(/^:/)) {
           let [, key, stringValue] = line.split(":");
           key = key.trim();
-          let value: string | number | boolean;
+          let value:
+            | null
+            | string
+            | number
+            | boolean
+            | { min: number | string; max: number | string };
 
           switch (key) {
             case "default":
               value = stringToNumber(stringValue.trim());
+
+              // 4.1. ASSIGN GLOBAL VARIABLE DEFINITIONS
+              if (globalVars.includes(currentParam)) {
+                globalVarDefs[currentParam] = value;
+              }
               break;
 
             case "description":
@@ -78,6 +94,15 @@ export async function readParams() {
 
             case "range":
               value = stringValue.trim();
+
+              if (value.includes(" - ")) {
+                const ranges = value.split(" - ");
+                value = {
+                  min: stringToNumber(ranges[0]),
+                  max: stringToNumber(ranges[1]),
+                };
+                // if (isNaN(+value.max)) console.log(title, currentParam, ranges);
+              }
               break;
 
             case "advanced":
@@ -87,14 +112,19 @@ export async function readParams() {
               break;
           }
 
-          /* 
-              3. Add formatted parameter to correct category
-            */
+          // 5. ADD FORMATTED PARAMETER TO CORRECT CATEGORY
           params[title][currentParam][key] = value;
         }
       }
     })
   );
+
+  // 6. REPLACE GLOBAL VARIABLE VALUES
+  const result = deepSearchAndReplace(params, globalVarDefs);
+
+  // console.log("GLOBAL_VARIABLES:", globalVarDefs);
+
+  console.log("EXAMPLE_OUTPUT:", result.output_variables.tstart);
 
   return params;
 }

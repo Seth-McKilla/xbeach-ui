@@ -8,6 +8,8 @@ import { fetchCollection } from "@/lib/api/utils";
 import clientPromise from "@/lib/mongodb";
 import { toOID } from "@/lib/mongodb/utils";
 
+import { readParams } from "@/lib/api/xbeach";
+
 const handler = apiHandler({
   GET: getProject,
   PATCH: patchProject,
@@ -20,6 +22,8 @@ async function getProject(
   req: NextApiRequestAuthenticated,
   res: NextApiResponse
 ) {
+  await readParams();
+
   const projectsCollection = await fetchCollection(clientPromise, "projects");
 
   const project = await projectsCollection

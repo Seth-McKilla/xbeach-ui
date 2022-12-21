@@ -12,6 +12,8 @@ type Props = {
 };
 
 export default function ListModels({ models }: Props) {
+  // TODO: Handle error
+  // TODO: Handle loading
   return (
     <div className="container grid grid-cols-1 gap-4 mx-auto mb-6 sm:grid-cols-3 lg:grid-cols-5">
       {models?.map(({ _id, name, description }) => (
