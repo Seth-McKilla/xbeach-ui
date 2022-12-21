@@ -63,7 +63,7 @@ export async function readParams() {
   let currentParam: string;
 
   // 2. INSTANTIATE GLOBAL VARIABLES (FOR REPLACING PARAMETER VALUES)
-  const globalVars = ["tstart", "tstop"];
+  const globalVars = ["tstart", "tstop", "ny"];
   const globalVarDefs = {};
 
   await Promise.all(
@@ -151,12 +151,6 @@ export async function readParams() {
 
   // 6. REPLACE GLOBAL VARIABLE VALUES
   const formattedParams = deepSearchAndReplaceParams(params, globalVarDefs);
-
-  const fs = require("fs");
-  fs.writeFileSync(
-    "./xbeach-params.json",
-    JSON.stringify(formattedParams, null, 2)
-  );
 
   return formattedParams;
 }
