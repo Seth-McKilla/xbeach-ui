@@ -17,7 +17,7 @@ export type Param = Partial<typeof defaultParam>;
 
 export async function readParams() {
   const response = await fetch(
-    "https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/xbeach_manual.rst"
+    "https://raw.githubusercontent.com/Seth-McKilla/xbeach-docs/master/docs/xbeach_manual.rst"
   );
   const text = await response.text();
 
@@ -48,7 +48,7 @@ export async function readParams() {
       params[title] = {};
 
       const response = await fetch(
-        `https://raw.githubusercontent.com/openearth/xbeach-docs/master/docs/tables/${table}`
+        `https://raw.githubusercontent.com/Seth-McKilla/xbeach-docs/master/docs/tables/${table}`
       );
       const text = await response.text();
 
