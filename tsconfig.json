@@ -17,7 +17,6 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/api/*": ["./pages/api/*"],
       "@/components/*": ["./app/components/*"],
       "@/lib/*": ["./lib/*"]
     },
