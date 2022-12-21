@@ -1,8 +1,4 @@
-import {
-  deepSearchAndReplace,
-  removeEscapedQuotes,
-  stringToNumber,
-} from "@/lib/common";
+import { deepSearchAndReplace, stringToNumber } from "@/lib/common";
 
 const defaultParam = {
   default: "",
@@ -101,7 +97,6 @@ export async function readParams() {
                   min: stringToNumber(ranges[0]),
                   max: stringToNumber(ranges[1]),
                 };
-                // if (isNaN(+value.max)) console.log(title, currentParam, ranges);
               }
               break;
 
@@ -120,11 +115,7 @@ export async function readParams() {
   );
 
   // 6. REPLACE GLOBAL VARIABLE VALUES
-  const result = deepSearchAndReplace(params, globalVarDefs);
+  const formattedParams = deepSearchAndReplace(params, globalVarDefs);
 
-  // console.log("GLOBAL_VARIABLES:", globalVarDefs);
-
-  console.log("EXAMPLE_OUTPUT:", result.output_variables.tstart);
-
-  return params;
+  return formattedParams;
 }
