@@ -19,7 +19,7 @@ export const deepSearchAndReplaceParams = (
   const result: any = {};
 
   Object.keys(srcObj).forEach((key) => {
-    if (typeof srcObj[key] === "object") {
+    if (typeof srcObj[key] === "object" && srcObj[key].length === undefined) {
       result[key] = deepSearchAndReplaceParams(srcObj[key], replacementsObj);
     } else {
       replacementKeys.forEach((replacementKey) => {
@@ -99,7 +99,8 @@ export async function readParams() {
             | string
             | number
             | boolean
-            | { min: number | string; max: number | string };
+            | { min: number | string; max: number | string }
+            | string[];
 
           switch (key) {
             case "default":
@@ -129,6 +130,8 @@ export async function readParams() {
                   min: stringToNumber(ranges[0]),
                   max: stringToNumber(ranges[1]),
                 };
+              } else if (value.includes(",")) {
+                value = value.split(",");
               }
               break;
 
@@ -148,6 +151,12 @@ export async function readParams() {
 
   // 6. REPLACE GLOBAL VARIABLE VALUES
   const formattedParams = deepSearchAndReplaceParams(params, globalVarDefs);
+
+  const fs = require("fs");
+  fs.writeFileSync(
+    "./xbeach-params.json",
+    JSON.stringify(formattedParams, null, 2)
+  );
 
   return formattedParams;
 }
