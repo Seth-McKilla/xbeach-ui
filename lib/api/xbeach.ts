@@ -63,7 +63,7 @@ export async function readParams() {
   let currentParam: string;
 
   // 2. INSTANTIATE GLOBAL VARIABLES (FOR REPLACING PARAMETER VALUES)
-  const globalVars = ["tstart", "tstop", "ny"];
+  const globalVars = ["tstart", "tstop", "ny", "nd"];
   const globalVarDefs = {};
 
   await Promise.all(
@@ -130,6 +130,7 @@ export async function readParams() {
                   min: stringToNumber(ranges[0]),
                   max: stringToNumber(ranges[1]),
                 };
+                // if (isNaN(+value.max)) console.log(title, currentParam, ranges);
               } else if (value.includes(",")) {
                 value = value.split(",");
               }
@@ -151,6 +152,9 @@ export async function readParams() {
 
   // 6. REPLACE GLOBAL VARIABLE VALUES
   const formattedParams = deepSearchAndReplaceParams(params, globalVarDefs);
+
+  const fs = require("fs");
+  fs.writeFileSync("./params.json", JSON.stringify(formattedParams, null, 2));
 
   return formattedParams;
 }

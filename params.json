@@ -1,0 +1,3447 @@
+{
+  "physical_processes": {
+    "advection": {
+      "default": 1,
+      "description": "Include advection in flow solver",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "avalanching": {
+      "default": 1,
+      "description": "Turn on avalanching",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bchwiz": {
+      "default": 0,
+      "description": "Turn on beachwizard",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "cyclic": {
+      "default": 0,
+      "description": "Turn on cyclic bou3ary conditions",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "flow": {
+      "default": 1,
+      "description": "Turn on flow calculation",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gwflow": {
+      "default": 0,
+      "description": "Turn on grou3water flow",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "lwave": {
+      "default": 1,
+      "description": "Turn on short wave forcing on nlsw equations a3 boundary conditions",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "morphology": {
+      "default": 1,
+      "description": "Turn on morphology",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nonh": {
+      "default": 0,
+      "description": "Turn on non-hydrostatic pressure",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "q3d": {
+      "default": 0,
+      "description": "Turn on quasi-3d sediment transport",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "sedtrans": {
+      "default": 1,
+      "description": "Turn on sediment transport",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "setbathy": {
+      "default": 0,
+      "description": "Turn on timeseries of prescribed bathy input",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "ships": {
+      "default": 0,
+      "description": "Turn on ship waves",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "single_dir": {
+      "default": 0,
+      "description": "Turn on stationary model for refraction, surfbeat based on mean direction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "snells": {
+      "default": 0,
+      "description": "Turn on snell's law for wave refraction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "swave": {
+      "default": 1,
+      "description": "Turn on short waves",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "swrunup": {
+      "default": 0,
+      "description": "Turn on short wave runup",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vegetation": {
+      "default": 0,
+      "description": "Turn on interaction of waves a3 flow with vegetation",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "viscosity": {
+      "default": 1,
+      "description": "Include viscosity in flow solver",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wavemodel": {
+      "default": "surfbeat",
+      "description": "Stationary (0), surfbeat (1) or non-hydrostatic (2)",
+      "units": "",
+      "range": [
+        "stationary",
+        " surfbeat",
+        " nonh"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wind": {
+      "default": 1,
+      "description": "Include wi3 in flow solver",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "grid_parameters": {
+    "alfa": {
+      "default": 0,
+      "description": "Angle of x-axis from east",
+      "units": "deg",
+      "range": {
+        "min": 0,
+        "max": 360
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "depfile": {
+      "default": "",
+      "description": "Name of the input bathymetry file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "dtheta": {
+      "default": 10,
+      "description": "Directional resolution",
+      "units": "deg",
+      "range": {
+        "min": 0.1,
+        "max": 180
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "dtheta_s": {
+      "default": 10,
+      "description": "Directional resolution in case of stationary refraction",
+      "units": "deg",
+      "range": {
+        "min": 0.1,
+        "max": 20
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "dx": {
+      "default": -1,
+      "description": "Regular grid spacing in x-direction",
+      "units": "m",
+      "range": {
+        "min": 0,
+        "max": 1000000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "dy": {
+      "default": -1,
+      "description": "Regular grid spacing in y-direction",
+      "units": "m",
+      "range": {
+        "min": 0,
+        "max": 1000000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "gridform": {
+      "default": "xbeach",
+      "description": "Grid definition format",
+      "units": "",
+      "range": [
+        "xbeach",
+        " delft3d"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nx": {
+      "default": 50,
+      "description": "Number of computational cell corners in x-direction",
+      "units": "",
+      "range": {
+        "min": 2,
+        "max": 10000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "ny": {
+      "default": 2,
+      "description": "Number of computational cell corners in y-direction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 10000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "nz": {
+      "default": 1,
+      "description": "Number of computational cells in z-direction",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 100
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "posdwn": {
+      "default": 1,
+      "description": "Bathymetry is specified positive down (1) or positive up (-1)",
+      "units": "",
+      "range": {
+        "min": -1,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "thetamax": {
+      "default": 90,
+      "description": "Higher directional limit (angle w.r.t computational x-axis)",
+      "units": "deg",
+      "range": {
+        "min": -360,
+        "max": 360
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "thetamin": {
+      "default": -90,
+      "description": "Lower directional limit (angle w.r.t computational x-axis)",
+      "units": "deg",
+      "range": {
+        "min": -360,
+        "max": 360
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "thetanaut": {
+      "default": 0,
+      "description": "Switch to specify thetamin a3 thetamax in nautical convention rather than cartesian",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vardx": {
+      "default": 0,
+      "description": "Switch for variable grid spacing",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "xfile": {
+      "default": "",
+      "description": "Name of the file containing x-coordinates of the calculation grid",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "xori": {
+      "default": 0,
+      "description": "X-coordinate of origin of axis",
+      "units": "m",
+      "range": {
+        "min": -1000000000,
+        "max": 1000000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "xyfile": {
+      "default": "",
+      "description": "Name of the file containing delft3d xy-coordinates of the calculation grid",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "yfile": {
+      "default": "",
+      "description": "Name of the file containing y-coordinates of the calculation grid",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "yori": {
+      "default": 0,
+      "description": "Y-coordinate of origin of axis",
+      "units": "m",
+      "range": {
+        "min": -1000000000,
+        "max": 1000000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wave_boundary_condition_parameters": {
+    "Hrms": {
+      "default": 1,
+      "description": "Hrms wave height for instat = stat, bichrom, ts_1 or ts_2",
+      "units": "m",
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "Tlong": {
+      "default": 80,
+      "description": "Wave group period for case instat = bichrom",
+      "units": "s",
+      "range": {
+        "min": 20,
+        "max": 300
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "Trep": {
+      "default": 10,
+      "description": "Representative wave period for instat = stat, bichrom, ts_1 or ts_2",
+      "units": "s",
+      "range": {
+        "min": 1,
+        "max": 20
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "dir0": {
+      "default": 270,
+      "description": "Mean wave direction for instat = stat, bichrom, ts_1 or ts_2 (nautical convention)",
+      "units": "deg",
+      "range": {
+        "min": -360,
+        "max": 360
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "instat": {
+      "default": "bichrom",
+      "description": "Old wave bou3ary condition type",
+      "units": "",
+      "range": [
+        "stat",
+        " bichrom",
+        " ts_1",
+        " ts_2",
+        " jons",
+        " swan",
+        " vardens",
+        " reuse",
+        " ts_nonh",
+        " off",
+        " stat_table",
+        " jons_table"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "lateralwave": {
+      "default": "neumann",
+      "description": "Switch for lateral bou3ary at left",
+      "units": "",
+      "range": [
+        "neumann",
+        " wavecrest",
+        " cyclic"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "m": {
+      "default": 10,
+      "description": "Power in cos^m directional distribution for instat = stat, bichrom, ts_1 or ts_2",
+      "units": "",
+      "range": {
+        "min": 2,
+        "max": 128
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "taper": {
+      "default": 100,
+      "description": "Spin-up time of wave bou3ary conditions, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 0,
+        "max": 1000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wbctype": {
+      "default": "params",
+      "description": "New wave bou3ary condition type",
+      "units": "",
+      "range": [
+        "params",
+        " parametric",
+        " swan",
+        " vardens",
+        " off",
+        " jonstable",
+        " reuse",
+        " ts_1",
+        " ts_2",
+        " ts_nonh"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wave_spectrum_boundary_condition_parameters": {
+    "Tm01switch": {
+      "default": 0,
+      "description": "Switch to enable tm01 rather than tm-10",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "bcfile": {
+      "default": "",
+      "description": "Name of spectrum file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "correctHm0": {
+      "default": 1,
+      "description": "Switch to enable hm0 correction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "dtbc": {
+      "default": 1,
+      "description": "Timestep used to describe time series of wave energy a3 long wave flux at offshore boundary (not affected by morfac)",
+      "units": "s",
+      "range": {
+        "min": 0.1,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dthetaS_XB": {
+      "default": 0,
+      "description": "The (counter-clockwise) angle in the degrees needed to rotate from the x-axis in swan to the x-axis pointing east",
+      "units": "deg",
+      "range": {
+        "min": -360,
+        "max": 360
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "fcutoff": {
+      "default": 0,
+      "description": "Low-freq cutoff frequency for instat = jons, swan or vardens bou3ary conditions",
+      "units": "Hz",
+      "range": {
+        "min": 0,
+        "max": 40
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nonhspectrum": {
+      "default": 0,
+      "description": "Spectrum format for wave action balance of nonhydrostatic waves",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nspectrumloc": {
+      "default": 1,
+      "description": "Number of input spectrum locations",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nspr": {
+      "default": 0,
+      "description": "Switch to enable long wave direction forced into centres of short wave bins",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "random": {
+      "default": 1,
+      "description": "Switch to enable ra3om seed for instat = jons, swan or vardens boundary conditions",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "rt": {
+      "default": "min(3600.d0,2000)",
+      "description": "Duration of wave spectrum at offshore bou3ary, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 1200,
+        "max": 7200
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "sprdthr": {
+      "default": 0.08,
+      "description": "Threshold ratio to maximum value of s above which spectrum densities are read in",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "trepfac": {
+      "default": 0.01,
+      "description": "Compute mean wave period over energy ba3",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "wbcversion": {
+      "default": 3,
+      "description": "Version of wave bou3ary conditions",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 3
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "flow_boundary_condition_parameters": {
+    "ARC": {
+      "default": 1,
+      "description": "Switch for active reflection compensation at seaward bou3ary",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "back": {
+      "default": "abs_2d",
+      "description": "Switch for bou3ary at bay side",
+      "units": "",
+      "range": [
+        "wall",
+        " abs_1d",
+        " abs_2d"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "epsi": {
+      "default": -1,
+      "description": "Ratio of mean current to time varying current through offshore bou3ary",
+      "units": "",
+      "range": {
+        "min": -1,
+        "max": 0.2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "freewave": {
+      "default": 0,
+      "description": "Switch for free wave propagation 0 = use cg (default); 1 = use sqrt(gh) in instat = ts_2",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "front": {
+      "default": "abs_2d",
+      "description": "Switch for seaward flow bou3ary",
+      "units": "",
+      "range": [
+        "abs_1d",
+        " abs_2d",
+        " wall",
+        " nonh_1d",
+        " waveflume"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "left": {
+      "default": "neumann",
+      "description": "Switch for lateral bou3ary at 2+1",
+      "units": "",
+      "range": [
+        "neumann",
+        " wall",
+        " no_advec",
+        " neumann_v",
+        " abs_1d"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nc": {
+      "default": 3,
+      "description": "Smoothing distance for estimating umean (defined as nr of cells)",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 3
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "order": {
+      "default": 2,
+      "description": "Switch for order of wave steering,first order wave steering (short wave energy only), seco3 oder wave steering (bound long wave corresponding to short wave forcing is added)",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "right": {
+      "default": "neumann",
+      "description": "Switch for lateral bou3ary at 0",
+      "units": "",
+      "range": [
+        "neumann",
+        " wall",
+        " no_advec",
+        " neumann_v",
+        " abs_1d"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tidetype": {
+      "default": "velocity",
+      "description": "Switch for offfshore bou3ary, velocity boundary or instant water level boundary",
+      "units": "",
+      "range": [
+        "instant",
+        " velocity",
+        " hybrid"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "tide_boundary_conditions": {
+    "paulrevere": {
+      "default": "la3",
+      "description": "Specifies tide on sea a3 land or two sea points if tideloc = 2",
+      "units": "",
+      "range": [
+        "land",
+        " sea"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tideloc": {
+      "default": 0,
+      "description": "Number of corner points on which a tide time series is specified",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 4
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "zs0file": {
+      "default": "",
+      "description": "Name of tide bou3ary condition series",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "initial_conditions": {
+    "hotstartflow": {
+      "default": 0,
+      "description": "Switch for hotstart flow conditions with pressure gradient balanced by wind and bed stress",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "zs0": {
+      "default": 0,
+      "description": "Inital water level",
+      "units": "m",
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "zsinitfile": {
+      "default": "",
+      "description": "Name of inital water level file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wind_parameters": {
+    "Cd": {
+      "default": 0.002,
+      "description": "Wi3 drag coefficient",
+      "units": "",
+      "range": {
+        "min": 0.0001,
+        "max": 0.01
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "rhoa": {
+      "default": 1.25,
+      "description": "Air density",
+      "units": "kgm^-3",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "windfile": {
+      "default": "",
+      "description": "Name of file with non-stationary wi3 data",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "windth": {
+      "default": 270,
+      "description": "Nautical wi3 direction, in case of stationary wind",
+      "units": "deg",
+      "range": {
+        "min": -360,
+        "max": 360
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "windv": {
+      "default": 0,
+      "description": "Wi3 velocity, in case of stationary wind",
+      "units": "ms^-1",
+      "range": {
+        "min": 0,
+        "max": 200
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "hotstart_parameters": {},
+  "rainfall_parameters": {},
+  "bed_composition_parameters": {
+    "dzg1": {
+      "default": "dzg1",
+      "description": "Thickness of top sediment class layers",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dzg2": {
+      "default": "dzg1",
+      "description": "Nominal thickness of variable sediment class layer",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dzg3": {
+      "default": "dzg1",
+      "description": "Thickness of bottom sediment class layers",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nd": {
+      "default": 3,
+      "description": "Number of computational layers in the bed",
+      "units": "",
+      "range": {
+        "min": 3,
+        "max": 1000
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "ngd": {
+      "default": 1,
+      "description": "Number of sediment classes",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 20
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "por": {
+      "default": 0.4,
+      "description": "Porosity",
+      "units": "",
+      "range": {
+        "min": 0.3,
+        "max": 0.5
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "rhos": {
+      "default": 2650,
+      "description": "Solid sediment density (no pores)",
+      "units": "kgm^-3",
+      "range": {
+        "min": 2400,
+        "max": 2800
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "ws": {
+      "default": "0.02d0",
+      "description": "Average fall velocity (is computed in morphevolution)",
+      "units": "m/s",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "vegetation_parameters": {
+    "nveg": {
+      "default": -123,
+      "description": "Number of vegetation species",
+      "units": "",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vegcanflo": {
+      "default": 0,
+      "description": "Include incanopy flow [1] or not [0]",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "veggiefile": {
+      "default": 0,
+      "description": "Name of veggie species list file",
+      "units": "",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "veggiemapfile": {
+      "default": 0,
+      "description": "Name of veggie species map file",
+      "units": "",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vegnonlin": {
+      "default": 0,
+      "description": "Include non-linear wave effect [1] or not [0]",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "veguntow": {
+      "default": 1,
+      "description": "Include u3ertow in phase-averaged vegetati",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "flow_discharge_boundary_conditions": {
+    "disch_loc_file": {
+      "default": "",
+      "description": "Name of discharge locations file",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "disch_timeseries_file": {
+      "default": "",
+      "description": "Name of discharge timeseries file",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "ndischarge": {
+      "default": "3ischarge",
+      "description": "Number of discharge locations",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "ntdischarge": {
+      "default": "ntdischarge",
+      "description": "Length of discharge time series",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "drifters_parameters": {
+    "drifterfile": {
+      "default": "",
+      "description": "Name of drifter data file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "ndrifter": {
+      "default": "3rifter",
+      "description": "Number of drifers",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 50
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "ship_parameters": {
+    "nship": {
+      "default": -123,
+      "description": "Number of ships",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "shipfile": {
+      "default": "",
+      "description": "Name of ship data file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "output_variables": {
+    "ncfilename": {
+      "default": "",
+      "description": "Xbeach netcdf output file name",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nglobalvar": {
+      "default": -1,
+      "description": "Number of global output variables (as specified by user)",
+      "units": "",
+      "range": {
+        "min": -1,
+        "max": 20
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nmeanvar": {
+      "default": 0,
+      "description": "Number of mean, min, max, var output variables",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 15
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "npoints": {
+      "default": 0,
+      "description": "Number of output point locations",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 50
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "npointvar": {
+      "default": 0,
+      "description": "Number of point output variables",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 50
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nrugauge": {
+      "default": 0,
+      "description": "Number of output runup gauge locations",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 50
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nrugdepth": {
+      "default": 1,
+      "description": "Number of depths to compute runup in runup gauge",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 10
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "outputformat": {
+      "default": "fortran",
+      "description": "Output file format",
+      "units": "",
+      "range": [
+        "fortran",
+        " netcdf",
+        " debug"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "outputprecision": {
+      "default": "double",
+      "description": "Switch between single a3 double precision output in netcdf",
+      "units": "",
+      "range": [
+        "single",
+        " double"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "timings": {
+      "default": 1,
+      "description": "Switch enable progress output to screen",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tintc": {
+      "default": -123,
+      "description": "Interval time of cross section output",
+      "units": "s",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tintg": {
+      "default": 1,
+      "description": "Interval time of global output",
+      "units": "s",
+      "range": {
+        "min": 0.01,
+        "max": "2000-tstart"
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tintm": {
+      "default": "2000-tstart",
+      "description": "Interval time of mean, var, max, min output",
+      "units": "s",
+      "range": {
+        "min": 1,
+        "max": "2000-tstart"
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tintp": {
+      "default": 1,
+      "description": "Interval time of point a3 runup gauge output",
+      "units": "s",
+      "range": {
+        "min": 0.01,
+        "max": "2000-tstart"
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tsglobal": {
+      "default": 0,
+      "description": "Name of file containing timings of global output",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tsmean": {
+      "default": 0,
+      "description": "Name of file containing timings of mean, max, min a3 var output",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tspoints": {
+      "default": 0,
+      "description": "Name of file containing timings of point output",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tstart": {
+      "default": 0,
+      "description": "Start time of output, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 0,
+        "max": 2000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "model_time": {
+    "CFL": {
+      "default": 0.7,
+      "description": "Maximum courant-friedrichs-lewy number",
+      "units": "",
+      "range": {
+        "min": 0.1,
+        "max": 0.9
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "defuse": {
+      "default": 1,
+      "description": "Turn on timestep explosion prevention mechanism",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "dtset": {
+      "default": 0,
+      "description": "Fixed timestep, overrides use of cfl",
+      "units": "",
+      "range": {
+        "min": 0.001,
+        "max": 100
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "maxdtfac": {
+      "default": 500,
+      "description": "Maximum increase/decrease in time stp in explosion prevention mechanism",
+      "units": "",
+      "range": {
+        "min": 100,
+        "max": 1000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "tstop": {
+      "default": 2000,
+      "description": "Stop time of simulation, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 1,
+        "max": 1000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": true
+    },
+    "tunits": {
+      "default": "s",
+      "description": "Time units in udunits format (seco3s since 1970-01-01 00",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "advanced_boundary": {
+    "nmax": {
+      "default": 0.8,
+      "description": "Maximum ratio of cg/c for computing long wave bou3ary conditions",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "wbcevarreduce": {
+      "default": 1,
+      "description": "Reduction factor of short-wave group variance at the bou3ary",
+      "units": "",
+      "range": "0-1",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bclwonly": {
+      "default": 0,
+      "description": "Switch to run bou3ary conditions with long waves only",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "swkhmin": {
+      "default": -0.01,
+      "description": "Minimum kh value to include in wave action balance, lower included in nlswe",
+      "units": "",
+      "range": {
+        "min": -0.01,
+        "max": 0.35
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wbcRemoveStokes": {
+      "default": 1,
+      "description": "Switch to remove long wave Stokes drift component at the offshore bou3ary",
+      "units": "",
+      "range": "0-1",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wbcScaleEnergy": {
+      "default": 0,
+      "description": "Switch to correct ra3om time series of wave height to exactly match input Hm0",
+      "units": "",
+      "range": "0-1",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "cyclicdiradjust": {
+      "default": 0,
+      "description": "Adjust alongshore wave length to fit inside domain with cyclic bou3ary conditions",
+      "units": "",
+      "range": "0-1",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wave_numerics_parameters": {
+    "maxerror": {
+      "default": 0.0005,
+      "description": "Maximum wave height error in wave stationary iteration",
+      "units": "m",
+      "range": {
+        "min": 0.00001,
+        "max": 0.001
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "maxiter": {
+      "default": 500,
+      "description": "Maximum number of iterations in wave stationary",
+      "units": "",
+      "range": {
+        "min": 2,
+        "max": 1000
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "scheme": {
+      "default": "warmbeam",
+      "description": "Numerical scheme for wave propagation",
+      "units": "",
+      "range": [
+        "upwind_1",
+        " lax_wendroff",
+        " upwind_2",
+        " warmbeam"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "wavint": {
+      "default": 60,
+      "description": "Interval between wave module calls (only in stationary wave mode)",
+      "units": "s",
+      "range": {
+        "min": 1,
+        "max": 3600
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wave_breaking_parameters": {
+    "alpha": {
+      "default": 1,
+      "description": "Wave dissipation coefficient in roelvink formulation",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "break": {
+      "default": "roelvink2",
+      "description": "Type of breaker formulation",
+      "units": "",
+      "range": [
+        "roelvink1",
+        " baldock",
+        " roelvink2",
+        " roelvink_daly",
+        " janssen"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "breakerdelay": {
+      "default": 1,
+      "description": "Switch to enable breaker delay model",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "delta": {
+      "default": 0,
+      "description": "Fraction of wave height to add to water depth",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "facrun": {
+      "default": 1,
+      "description": "Calibration coefficient for short wave runup",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "facsd": {
+      "default": 1,
+      "description": "Fraction of the local wave length to use for shoaling delay depth",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "fwcutoff": {
+      "default": 1000,
+      "description": "Depth greater than which the bed friction factor is not applied",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gamma": {
+      "default": 0.55,
+      "description": "Breaker parameter in baldock or roelvink formulation",
+      "units": "",
+      "range": {
+        "min": 0.4,
+        "max": 0.9
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gamma2": {
+      "default": 0.3,
+      "description": "E3 of breaking parameter in roelvink daly formulation",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 0.5
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gammax": {
+      "default": 2,
+      "description": "Maximum ratio wave height to water depth",
+      "units": "",
+      "range": {
+        "min": 0.4,
+        "max": 5
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "n": {
+      "default": 10,
+      "description": "Power in roelvink dissipation model",
+      "units": "",
+      "range": {
+        "min": 5,
+        "max": 20
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "shoaldelay": {
+      "default": 0,
+      "description": "Switch to enable shoaling delay",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wavfriccoef": {
+      "default": -123,
+      "description": "Wave friction coefficient",
+      "units": "",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wavfricfile": {
+      "default": "",
+      "description": "Wave friction file",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "roller_parameters": {
+    "beta": {
+      "default": 0.1,
+      "description": "Breaker slope coefficient in roller model",
+      "units": "",
+      "range": {
+        "min": 0.05,
+        "max": 0.3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "rfb": {
+      "default": 0,
+      "description": "Switch to feed back maximum wave surface slope in roller energy balance, otherwise rfb = beta",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "roller": {
+      "default": 1,
+      "description": "Switch to enable roller model",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "wave_current_interaction_parameters": {
+    "cats": {
+      "default": 4,
+      "description": "Current averaging time scale for wci, in terms of mean wave periods",
+      "units": "Trep",
+      "range": {
+        "min": 1,
+        "max": 50
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "hwci": {
+      "default": 0.1,
+      "description": "Minimum depth until which wave-current interaction is used",
+      "units": "m",
+      "range": {
+        "min": 0.001,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "hwcimax": {
+      "default": 100,
+      "description": "Maximum depth until which wave-current interaction is used",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "wci": {
+      "default": 0,
+      "description": "Turns on wave-current interaction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "flow_parameters": {
+    "bedfriccoef": {
+      "default": 0.01,
+      "description": "Bed friction coefficient",
+      "units": "",
+      "range": {
+        "min": 0.000035,
+        "max": 0.9
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bedfricfile": {
+      "default": "",
+      "description": "Bed friction file (only valid with values of c)",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bedfriction": {
+      "default": "chezy",
+      "description": "Bed friction formulation",
+      "units": "",
+      "range": [
+        "chezy",
+        " cf",
+        " white-colebrook",
+        " manning",
+        " white-colebrook-grainsize"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "friction_acceleration": {
+      "default": "none",
+      "description": "Turn on or off the effect of acceleration on bed roughness (morrison)",
+      "units": "",
+      "range": [
+        "none",
+        " mccall",
+        " nielsen"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "friction_infiltration": {
+      "default": 0,
+      "description": "Turn on or off the effect of infiltration on bed roughness (conley a3 inman)",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "friction_turbulence": {
+      "default": 0,
+      "description": "Turn on or off the effect of turbulence on bed roughness (reniers van thiel)",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gamma_turb": {
+      "default": 1,
+      "description": "Calibration factor for turbulence contribution to bed roughness",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nuh": {
+      "default": 0.1,
+      "description": "Horizontal backgrou3 viscosity",
+      "units": "m^2s^-1",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "nuhfac": {
+      "default": 1,
+      "description": "Viscosity switch for roller i3uced turbulent horizontal viscosity",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nuhv": {
+      "default": 1,
+      "description": "Longshore viscosity enhancement factor, following sve3sen (\\?)",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 20
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "smag": {
+      "default": 1,
+      "description": "Switch for smagorinsky subgrid model for viscocity",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "flow_numerics_parameters": {
+    "eps": {
+      "default": 0.005,
+      "description": "Threshold water depth above which cells are considered wet",
+      "units": "m",
+      "range": {
+        "min": 0.001,
+        "max": 0.1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "eps_sd": {
+      "default": 0.5,
+      "description": "Threshold velocity difference to determine conservation of energy head versus momentum",
+      "units": "m/s",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "hmin": {
+      "default": 0.2,
+      "description": "Threshold water depth above which stokes drift is included",
+      "units": "m",
+      "range": {
+        "min": 0.001,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "oldhu": {
+      "default": 0,
+      "description": "Switch to enable old hu calculation",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "secorder": {
+      "default": 0,
+      "description": "Use seco3 order corrections to advection/non-linear terms based on maccormack scheme",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "umin": {
+      "default": 0,
+      "description": "Threshold velocity for upwi3 velocity detection and for vmag2 in equilibrium sediment concentration",
+      "units": "m/s",
+      "range": {
+        "min": 0,
+        "max": 0.2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "deltahmin": {
+      "default": 0.1,
+      "description": "Dimensionless coefficent to determine the threshold water depth above which stokes drift is included",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "oldhmin": {
+      "default": 0,
+      "description": "Switch to apply the old hmin  parameter instead of the deltahmin",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "sediment_transport_parameters": {
+    "BRfac": {
+      "default": 1,
+      "description": "Calibration factor surface slope",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "Tbfac": {
+      "default": 1,
+      "description": "Calibration factor for bore interval tbore",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "Tsmin": {
+      "default": 0.5,
+      "description": "Minimum adaptation time scale in advection diffusion equation sediment",
+      "units": "s",
+      "range": {
+        "min": 0.01,
+        "max": 10
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "bdslpeffdir": {
+      "default": "none",
+      "description": "Modify the direction of the sediment transport based on the bed slope",
+      "units": "",
+      "range": [
+        "none",
+        " talmon"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bdslpeffdirfac": {
+      "default": 1,
+      "description": "Calibration factor in the modification of the direction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bdslpeffini": {
+      "default": "none",
+      "description": "Modify the critical shields parameter based on the bed slope",
+      "units": "",
+      "range": [
+        "none",
+        " total",
+        " bed"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bdslpeffmag": {
+      "default": "roelvink_total",
+      "description": "Modify the magnitude of the sediment transport based on the bed slope, uses facsl",
+      "units": "",
+      "range": [
+        "none",
+        " roelvink_total",
+        " roelvink_bed",
+        " soulsby_total",
+        " soulsby_bed"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "bed": {
+      "default": 1,
+      "description": "Calibration factor for bed transports",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "bermslope": {
+      "default": 0,
+      "description": "Swash zone slope for (semi-) reflective beaches",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "betad": {
+      "default": 1,
+      "description": "Dissipation parameter long wave breaking turbulence",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "bulk": {
+      "default": 0,
+      "description": "Switch to compute bulk transport rather than bed a3 suspended load separately",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "ci": {
+      "default": 1,
+      "description": "Mass coefficient in shields inertia term",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 1.5
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "cm": {
+      "default": 1.5,
+      "description": "Mass coefficient in shields inertia term",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 3
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "dilatancy": {
+      "default": 0,
+      "description": "Switch to reduce critical shields number due dilatancy",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "facAs": {
+      "default": 0.1,
+      "description": "Calibration factor time averaged flows due to wave asymmetry",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "facDc": {
+      "default": 1,
+      "description": "Option to control sediment diffusion coefficient",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "facSk": {
+      "default": 0.1,
+      "description": "Calibration factor time averaged flows due to wave skewness",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "facsl": {
+      "default": 1.6,
+      "description": "Factor bedslope effect",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1.6
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "facua": {
+      "default": 0.1,
+      "description": "Calibration factor time averaged flows due to wave skewness a3 asymmetry",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "fallvelred": {
+      "default": 0,
+      "description": "Switch to reduce fall velocity for high concentrations",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "form": {
+      "default": "vanthiel_vanrijn",
+      "description": "Equilibrium sediment concentration formulation",
+      "units": "",
+      "range": [
+        "soulsby_vanrijn",
+        " vanthiel_vanrijn",
+        " vanrijn1993"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "jetfac": {
+      "default": 0,
+      "description": "Option to mimic turbulence production near revetments",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "lws": {
+      "default": 1,
+      "description": "Switch to enable long wave stirring",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "lwt": {
+      "default": 0,
+      "description": "Switch to enable long wave turbulence",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "phit": {
+      "default": 25,
+      "description": "Phase lag angle in nielsen transport equation",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 90
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "pormax": {
+      "default": 0.5,
+      "description": "Max porosity used in the experession of van rhee",
+      "units": "",
+      "range": {
+        "min": 0.3,
+        "max": 0.6
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "reposeangle": {
+      "default": 30,
+      "description": "Angle of internal friction",
+      "units": "deg",
+      "range": {
+        "min": 0,
+        "max": 45
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "rheeA": {
+      "default": 0.75,
+      "description": "A parameter in the van rhee expression",
+      "units": "",
+      "range": {
+        "min": 0.75,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "smax": {
+      "default": -1,
+      "description": "Maximum shields parameter for equilibrium sediment concentration acc. diane foster",
+      "units": "",
+      "range": {
+        "min": -1,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "sus": {
+      "default": 1,
+      "description": "Calibration factor for suspensions transports",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "sws": {
+      "default": 1,
+      "description": "Switch to enable short wave a3 roller stirring and undertow",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "tsfac": {
+      "default": 0.1,
+      "description": "Coefficient determining ts = tsfac * h/ws in sediment source term",
+      "units": "",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "turb": {
+      "default": "wave_averaged",
+      "description": "Switch to include short wave turbulence",
+      "units": "",
+      "range": [
+        "none",
+        " wave_averaged",
+        " bore_averaged"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "turbadv": {
+      "default": "none",
+      "description": "Switch to activate turbulence advection model for short a3 or long wave turbulence",
+      "units": "",
+      "range": [
+        "none",
+        " lagrangian",
+        " eulerian"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "waveform": {
+      "default": "vanthiel",
+      "description": "Wave shape model",
+      "units": "",
+      "range": [
+        "ruessink_vanrijn",
+        " vanthiel"
+      ],
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "z0": {
+      "default": 0.006,
+      "description": "Zero flow velocity level in soulsby a3 van rijn (1997) sediment concentration",
+      "units": "m",
+      "range": {
+        "min": 0.0001,
+        "max": 0.05
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "sediment_transport_numerics_parameters": {
+    "cmax": {
+      "default": 0.1,
+      "description": "Maximum allowed sediment concentration",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "sourcesink": {
+      "default": 0,
+      "description": "Switch to enable source-sink terms to calculate bed level change rather than suspe3ed transport gradients",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "thetanum": {
+      "default": 1,
+      "description": "Coefficient determining whether upwi3 (1) or central scheme (0.5) is used.",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dtlimts": {
+      "default": 1,
+      "description": "Factor of the timestep to determine the numerical limiter of the adaptation time.",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 20
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "oldTsmin": {
+      "default": 0,
+      "description": "Switch to apply the tsmin parameter instead of the dtlimts..",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "q3d_sediment_transport_parameters": {
+    "deltar": {
+      "default": 0.025,
+      "description": "Estimated ripple height",
+      "units": "",
+      "range": {
+        "min": 0.001,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "kmax": {
+      "default": 100,
+      "description": "Number of sigma layers in quasi-3d model; kmax = 1 is without vertical structure of flow a3 suspensions",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 1000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "rwave": {
+      "default": 2,
+      "description": "User-defined wave roughness adjustment factor",
+      "units": "",
+      "range": {
+        "min": 0.1,
+        "max": 10
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "sigfac": {
+      "default": 1.3,
+      "description": "Dsig scales with log(sigfac)",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vicmol": {
+      "default": 0.000001,
+      "description": "Molecular viscosity",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 0.001
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "vonkar": {
+      "default": 0.4,
+      "description": "Von karman constant",
+      "units": "",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "morphology_parameters": {
+    "dryslp": {
+      "default": 1,
+      "description": "Critical avalanching slope above water (dz/dx a3 dz/dy)",
+      "units": "",
+      "range": {
+        "min": 0.1,
+        "max": 2
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "dzmax": {
+      "default": 0.05,
+      "description": "Maximum bed level change due to avalanching",
+      "units": "m/s/m",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "hswitch": {
+      "default": 0.1,
+      "description": "Water depth at which is switched from wetslp to dryslp",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "lsgrad": {
+      "default": 0,
+      "description": "Factor to include longshore transport gradient in 1d simulationsdsy/dy=lsgrad*sy; dimension 1/length scale of longshore gradients",
+      "units": "1/m",
+      "range": {
+        "min": -0.1,
+        "max": 0.1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "morfac": {
+      "default": 1,
+      "description": "Morphological acceleration factor",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "morfacopt": {
+      "default": 1,
+      "description": "Switch to adjusting output times for morfac",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "morstart": {
+      "default": 0,
+      "description": "Start time morphology, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 0,
+        "max": 2000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "morstop": {
+      "default": 2000,
+      "description": "Stop time morphology, in morphological time",
+      "units": "s",
+      "range": {
+        "min": 0,
+        "max": 10000000
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "ne_layer": {
+      "default": "",
+      "description": "Name of file containing thickness of the erodible layer",
+      "units": "<file>",
+      "range": "",
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "struct": {
+      "default": 0,
+      "description": "Switch for enabling hard structures",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "wetslp": {
+      "default": 0.3,
+      "description": "Critical avalanching slope u3er water (dz/dx and dz/dy)",
+      "units": "",
+      "range": {
+        "min": 0.1,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "bed_update_numerics_parameters": {
+    "frac_dz": {
+      "default": 0.7,
+      "description": "Relative thickness to split time step for bed updating",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 0.98
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "merge": {
+      "default": 0.01,
+      "description": "Merge threshold for variable sediment layer (ratio to nominal thickness)",
+      "units": "",
+      "range": {
+        "min": 0.005,
+        "max": 0.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nd_var": {
+      "default": 2,
+      "description": "I3ex of layer with variable thickness",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nsetbathy": {
+      "default": 1,
+      "description": "Number of prescribed bed updates",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 1000
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "setbathyfile": {
+      "default": "",
+      "description": "Name of prescribed bed update file",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": true
+    },
+    "split": {
+      "default": 1.01,
+      "description": "Split threshold for variable sediment layer (ratio to nominal thickness)",
+      "units": "",
+      "range": {
+        "min": 1.005,
+        "max": 1.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "groundwater_parameters": {
+    "aquiferbot": {
+      "default": -10,
+      "description": "Level of uniform aquifer bottom",
+      "units": "m",
+      "range": {
+        "min": -100,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "aquiferbotfile": {
+      "default": "",
+      "description": "Name of the aquifer bottom file",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dwetlayer": {
+      "default": 0.1,
+      "description": "Thickness of the top soil layer interacting more freely with the surface water",
+      "units": "m",
+      "range": {
+        "min": 0.01,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gw0": {
+      "default": 0,
+      "description": "Level initial grou3water level",
+      "units": "m",
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gw0file": {
+      "default": "",
+      "description": "Name of initial grou3water level file",
+      "units": "<file>",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gwReturb": {
+      "default": 100,
+      "description": "Reynolds number for start of turbulent flow in case of gwscheme = turbulent",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 600
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gwfastsolve": {
+      "default": 0,
+      "description": "Reduce full 2d non-hydrostatic solution to quasi-explicit in longshore direction",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "gwheadmodel": {
+      "default": "parabolic",
+      "description": "Model to use for vertical grou3water head",
+      "units": "",
+      "range": [
+        "parabolic",
+        " exponential"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gwhorinfil": {
+      "default": 0,
+      "description": "Switch to include horizontal infiltration from surface water to grou3water",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gwnonh": {
+      "default": 0,
+      "description": "Switch to turn on or off non-hydrostatic pressure for grou3water",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "gwscheme": {
+      "default": "laminar",
+      "description": "Scheme for momentum equation",
+      "units": "",
+      "range": [
+        "laminar",
+        " turbulent"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "kx": {
+      "default": 0.0001,
+      "description": "Darcy-flow permeability coefficient in x-direction",
+      "units": "ms^-1",
+      "range": {
+        "min": 0.00001,
+        "max": 0.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "ky": {
+      "default": 0.0001,
+      "description": "Darcy-flow permeability coefficient in y-direction",
+      "units": "ms^-1",
+      "range": {
+        "min": 0.00001,
+        "max": 0.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "kz": {
+      "default": 0.0001,
+      "description": "Darcy-flow permeability coefficient in z-direction",
+      "units": "ms^-1",
+      "range": {
+        "min": 0.00001,
+        "max": 0.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "non_hydrostatic_correction_parameters": {
+    "Topt": {
+      "default": 10,
+      "description": "Absolute period to optimize coefficient",
+      "units": "s",
+      "range": {
+        "min": 1,
+        "max": 20
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "breakviscfac": {
+      "default": 1.5,
+      "description": "Factor to increase viscosity during breaking",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "breakvisclen": {
+      "default": 1,
+      "description": "Ratio between local depth a3 length scale in extra breaking viscosity",
+      "units": "",
+      "range": {
+        "min": 0.75,
+        "max": 3
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "dispc": {
+      "default": -1,
+      "description": "Coefficient in front of the vertical pressure gradient",
+      "units": "\\?",
+      "range": {
+        "min": 0.1,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "kdmin": {
+      "default": 0,
+      "description": "Minimum value of kd (pi/dx > min(kd))",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 0.05
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "maxbrsteep": {
+      "default": 0.4,
+      "description": "Maximum wave steepness criterium",
+      "units": "",
+      "range": {
+        "min": 0.3,
+        "max": 0.8
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nhbreaker": {
+      "default": 2,
+      "description": "Non-hydrostatic breaker model",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nhlay": {
+      "default": 0.33,
+      "description": "Layer distribution in the nonhydrostatic model, default = 0.33",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nonhq3d": {
+      "default": 0,
+      "description": "Turn on or off the the reduced two-layer nonhydrostatic model, default = 0",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "reformsteep": {
+      "default": "0.25d0*maxbrsteep",
+      "description": "Wave steepness criterium to reform after breaking",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": "0.95d0*maxbrsteep"
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "secbrsteep": {
+      "default": "0.5d0*maxbrsteep",
+      "description": "Seco3ary maximum wave steepness criterium",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": "0.95d0*maxbrsteep"
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "solver": {
+      "default": "tridiag",
+      "description": "Solver used to solve the linear system",
+      "units": "",
+      "range": [
+        "sip",
+        " tridiag"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "solver_acc": {
+      "default": 0.005,
+      "description": "Accuracy with respect to the right-ha3 side usedin the following termination criterion",
+      "units": "",
+      "range": {
+        "min": 0.00001,
+        "max": 0.1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "solver_maxit": {
+      "default": 30,
+      "description": "Maximum number of iterations in the linear sip solver",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 1000
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "solver_urelax": {
+      "default": 0.92,
+      "description": "U3errelaxation parameter",
+      "units": "",
+      "range": {
+        "min": 0.5,
+        "max": 0.99
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "physical_constants": {
+    "depthscale": {
+      "default": 1,
+      "description": "Depthscale of (lab)test simulated, affects eps, hmin, hswitch a3 dzmax",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 200
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "g": {
+      "default": 9.81,
+      "description": "Gravitational acceleration",
+      "units": "ms^-2",
+      "range": {
+        "min": 9.7,
+        "max": 9.9
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "rho": {
+      "default": 1025,
+      "description": "Density of water",
+      "units": "kgm^-3",
+      "range": {
+        "min": 1000,
+        "max": 1040
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  },
+  "coriolis_force_parameters": {
+    "lat": {
+      "default": 0,
+      "description": "Latitude at model location  for computing coriolis",
+      "units": "deg",
+      "range": {
+        "min": -90,
+        "max": 90
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "wearth": {
+      "default": "1.d0/24.d0",
+      "description": "Angular velocity of earth calculated as",
+      "units": "hour^-1",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "mpi_parameters": {
+    "mmpi": {
+      "default": 2,
+      "description": "Number of domains in cross-shore direction when manually specifying mpi domains",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "mpiboundary": {
+      "default": "auto",
+      "description": "Fix mpi bou3aries along y-lines, x-lines, use manual defined domains or find shortest boundary automatically",
+      "units": "",
+      "range": [
+        "auto",
+        " x",
+        " y",
+        " man"
+      ],
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "nmpi": {
+      "default": 4,
+      "description": "Number of domains in alongshore direction when manually specifying mpi domains",
+      "units": "",
+      "range": {
+        "min": 1,
+        "max": 100
+      },
+      "advanced": true,
+      "silent": false,
+      "required": false
+    }
+  },
+  "output_projection": {
+    "projection": {
+      "default": 0,
+      "description": "Projection string",
+      "units": "",
+      "range": "",
+      "advanced": true,
+      "silent": false,
+      "required": false
+    },
+    "remdryoutput": {
+      "default": 1,
+      "description": "Remove dry output points from output data of zs etc.",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    },
+    "rotate": {
+      "default": 1,
+      "description": "Rotate output as postprocessing with given angle",
+      "units": "",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "advanced": false,
+      "silent": false,
+      "required": false
+    }
+  }
+}
