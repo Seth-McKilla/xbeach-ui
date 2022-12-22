@@ -15,7 +15,7 @@ specifiers:
   eslint-config-next: 13.0.7
   mongodb: 4.13.0
   next: 13.0.7
-  next-auth: 4.18.5
+  next-auth: 4.18.7
   nodemailer: 6.8.0
   postcss: ^8.4.16
   prettier: ^2.7.1
@@ -29,12 +29,12 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
-  '@next-auth/mongodb-adapter': 1.1.1_q742ivtjdkqpqhs25ud54a7gqe
+  '@next-auth/mongodb-adapter': 1.1.1_hfctdfwmomhbeathxql5fffjyy
   '@next/font': 13.0.7
   clsx: 1.2.1
   mongodb: 4.13.0
   next: 13.0.7_biqbaboplfbrettd7655fr4n2y
-  next-auth: 4.18.5_gxrb4puqhmlxj5cjmftw47fgty
+  next-auth: 4.18.7_gxrb4puqhmlxj5cjmftw47fgty
   nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -923,14 +923,14 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@next-auth/mongodb-adapter/1.1.1_q742ivtjdkqpqhs25ud54a7gqe:
+  /@next-auth/mongodb-adapter/1.1.1_hfctdfwmomhbeathxql5fffjyy:
     resolution: {integrity: sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
     dependencies:
       mongodb: 4.13.0
-      next-auth: 4.18.5_gxrb4puqhmlxj5cjmftw47fgty
+      next-auth: 4.18.7_gxrb4puqhmlxj5cjmftw47fgty
     dev: false
 
   /@next/env/13.0.7:
@@ -2585,8 +2585,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-auth/4.18.5_gxrb4puqhmlxj5cjmftw47fgty:
-    resolution: {integrity: sha512-ktYsfrc3yygLkj0Z0xdoNfa59seVMF7NRf2pAFzay7eN/a/KUTC8MvM1gTDACFNKsbPa7fQx6Rds68xNVbDk2Q==}
+  /next-auth/4.18.7_gxrb4puqhmlxj5cjmftw47fgty:
+    resolution: {integrity: sha512-kR3s1JVPMaDuSAlFxcGyv7Ec3fdE6za71r1F77IOII5zJmW2wfkIA2xj223fM0D20ip2pzFpHfk/qN4L6l5XMA==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0 || ^18.12.0}
     peerDependencies:
       next: ^12.2.5 || ^13
