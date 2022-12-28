@@ -21,7 +21,7 @@ specifiers:
   prettier: ^2.7.1
   react: 18.2.0
   react-dom: 18.2.0
-  react-hook-form: 7.41.1
+  react-hook-form: 7.41.2
   swr: 2.0.0
   tailwind-merge: 1.8.1
   tailwindcss: ^3.1.8
@@ -38,7 +38,7 @@ dependencies:
   nodemailer: 6.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-hook-form: 7.41.1_react@18.2.0
+  react-hook-form: 7.41.2_react@18.2.0
   swr: 2.0.0_react@18.2.0
   tailwind-merge: 1.8.1
 
@@ -2984,8 +2984,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-hook-form/7.41.1_react@18.2.0:
-    resolution: {integrity: sha512-IHUozfwuqE+P201KIJwotMd+UCKqzIprseR8UUjz1jRupkZeubg0xyeMLIaT192zHv7vBBu9bibpNV5cIB4E9g==}
+  /react-hook-form/7.41.2_react@18.2.0:
+    resolution: {integrity: sha512-Uz5kNlfkEZve0sr5y2LsxPDGN3eNDjjKb1XJgand1E5Ay0S3zWo8YcJQNGu88/Zs6JaFnrJqTXbSr6B2q7wllA==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
