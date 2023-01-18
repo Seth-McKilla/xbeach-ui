@@ -21,7 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.42.1",
-    "swr": "2.0.0",
+    "swr": "2.0.1",
     "tailwind-merge": "1.8.1"
   },
   "devDependencies": {
