@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:fix": "prettier './**/*.{tsx,ts}' --write"
+    "prettier:fix": "prettier './**/*.{tsx,ts}' --write",
+    "reinstall": "rimraf ./node_modules ./.next pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
     "@headlessui/react": "1.7.7",
